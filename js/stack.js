@@ -177,7 +177,7 @@ function initPageStack() {
 }
 
 function injectMobileComponents() {
-    if (document.querySelector('.mobile-app-bottom-bar')) return;
+    if (document.getElementById('floating-stack-fab')) return;
 
     const currentFilename = getCurrentPageFilename();
 
@@ -196,21 +196,85 @@ function injectMobileComponents() {
         </nav>
     `;
 
-    // 2. Mobile Floating Stack Controller Bar
-    const floatingBarHtml = `
-        <div class="mobile-floating-stack-bar">
-            <div class="m-stack-info">
-                <span class="m-stack-icon">🥞</span>
-                <span class="m-stack-text">TOP: <strong id="m-top-name">Home</strong></span>
-                <span class="m-stack-badge" id="m-stack-size">1</span>
+    // 2. Floating Stack Action Button (FAB) at Bottom-Right
+    const fabHtml = `
+        <div id="floating-stack-fab" class="floating-stack-fab" title="Open Page History Stack (LIFO) Inspector">
+            <span class="fab-icon">🥞</span>
+            <span class="fab-text">Stack (LIFO)</span>
+            <span class="fab-badge" id="fab-stack-depth">${pageStack.size()}</span>
+        </div>
+    `;
+
+    // 3. Floating Pop-Up Stack Modal Container
+    const modalHtml = `
+        <div id="stack-modal-overlay" class="stack-modal-overlay">
+            <div class="stack-modal-card">
+                <div class="stack-modal-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.25rem;">🥞</span>
+                        <strong style="font-size: 0.95rem; color: #0f172a; letter-spacing: -0.01em;">PAGE HISTORY STACK (LIFO)</strong>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.65rem;">
+                        <span class="stack-counter" style="font-size: 0.78rem;">Depth: <span id="stack-size-count">0</span></span>
+                        <button id="close-stack-modal" class="modal-close-btn">&times;</button>
+                    </div>
+                </div>
+
+                <div style="padding: 1.1rem;">
+                    <div class="control-actions" style="margin-bottom: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <button class="btn btn-back">← Back (POP)</button>
+                        <button class="btn btn-reset-stack">Reset Stack</button>
+                    </div>
+
+                    <div class="stats-row" style="margin-bottom: 0.85rem;">
+                        <div class="stat-card">
+                            <div class="stat-label">PUSHES</div>
+                            <div class="stat-val" id="stat-push-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">POPS</div>
+                            <div class="stat-val" id="stat-pop-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">PEAK SIZE</div>
+                            <div class="stat-val" id="stat-peak-count">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stack-viewport" id="visual-stack-container" style="max-height: 220px; overflow-y: auto;"></div>
+
+                    <div class="ds-inspector-card" style="margin-top: 0.85rem;">
+                        <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
+                        <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
+                        <div class="ds-line" id="ds-array-code" style="color: #38bdf8; font-size: 0.75rem;">items = [];</div>
+                        <div class="ds-line" style="margin-top: 0.35rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Home"</span></div>
+                        <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-back m-pop-btn">← POP</button>
         </div>
     `;
 
     const wrapper = document.createElement('div');
-    wrapper.innerHTML = bottomBarHtml + floatingBarHtml;
+    wrapper.innerHTML = bottomBarHtml + fabHtml + modalHtml;
     document.body.appendChild(wrapper);
+
+    // Wire Floating Modal Toggle
+    const fab = document.getElementById('floating-stack-fab');
+    const modal = document.getElementById('stack-modal-overlay');
+    const closeBtn = document.getElementById('close-stack-modal');
+
+    if (fab && modal) {
+        fab.addEventListener('click', () => modal.classList.add('active'));
+    }
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+    }
 }
 
 function navigateToPage(pageName, url) {
@@ -293,7 +357,10 @@ function renderStackUI() {
         }
     });
 
-    // 3. Mobile Floating Controller Updates
+    // 3. Floating FAB Badge Updates
+    const fabBadge = document.getElementById('fab-stack-depth');
+    if (fabBadge) fabBadge.textContent = pageStack.size();
+
     const mTopName = document.getElementById('m-top-name');
     if (mTopName) mTopName.textContent = topItem ? topItem.name : 'None';
 
