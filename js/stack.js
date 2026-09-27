@@ -1,12 +1,12 @@
 /**
- * PageStack Class - Mobile App Architecture Implementation
- * Features: Automatic Mobile App Tab Bar, Floating Mobile Stack Controller,
- * LIFO navigation engine, and LocalStorage persistence.
+ * PageStack Class - Elite Software Architecture
+ * Features: Dynamic 5-Tab Mobile Navigation, Floating LIFO Controller Bar,
+ * Real-time Virtual Memory Hex Pointers, and HTML5 LocalStorage persistence.
  */
 class PageStack {
     constructor() {
-        this.storageKey = 'stack_page_history_v3';
-        this.metricsKey = 'stack_page_metrics_v3';
+        this.storageKey = 'stack_page_history_v4';
+        this.metricsKey = 'stack_page_metrics_v4';
         
         this.items = this.loadStack();
         this.metrics = this.loadMetrics();
@@ -119,7 +119,7 @@ class PageStack {
 const pageStack = new PageStack();
 
 /**
- * Metadata Map
+ * All Page Metadata
  */
 const PAGE_META = {
     'index.html': { name: 'Home', icon: '🏠', subtitle: 'Interactive Stack Simulator' },
@@ -131,6 +131,17 @@ const PAGE_META = {
     'contact.html': { name: 'Contact', icon: '📞', subtitle: 'Developer Hub & QA Forum' },
     'profile.html': { name: 'Profile', icon: '👤', subtitle: 'Session Analytics & Trajectory' }
 };
+
+/**
+ * 5 Primary Clean Mobile Bottom Tabs (Avoids text line-wrapping on smartphones)
+ */
+const MOBILE_PRIMARY_TABS = [
+    { file: 'index.html', name: 'Home', icon: '🏠' },
+    { file: 'about.html', name: 'About', icon: 'ℹ️' },
+    { file: 'services.html', name: 'Services', icon: '⚙️' },
+    { file: 'products.html', name: 'Products', icon: '📦' },
+    { file: 'profile.html', name: 'Profile', icon: '👤' }
+];
 
 function getCurrentPageFilename() {
     let path = window.location.pathname;
@@ -155,9 +166,7 @@ function initPageStack() {
         }
     }
 
-    // Inject Mobile Navigation Component dynamically if not present
     injectMobileComponents();
-
     renderStackUI();
     bindEvents();
 }
@@ -167,14 +176,13 @@ function injectMobileComponents() {
 
     const currentFilename = getCurrentPageFilename();
 
-    // 1. Mobile Bottom Tab Bar
+    // 1. Mobile Bottom Tab Bar (5 Clean Tabs)
     const bottomBarHtml = `
         <nav class="mobile-app-bottom-bar">
-            ${Object.keys(PAGE_META).map(file => {
-                const item = PAGE_META[file];
-                const isActive = (file === currentFilename) ? 'active' : '';
+            ${MOBILE_PRIMARY_TABS.map(item => {
+                const isActive = (item.file === currentFilename) ? 'active' : '';
                 return `
-                    <a href="${file}" class="mobile-app-tab ${isActive}" data-page="${item.name}">
+                    <a href="${item.file}" class="mobile-app-tab ${isActive}" data-page="${item.name}">
                         <span class="tab-icon">${item.icon}</span>
                         <span class="tab-label">${item.name}</span>
                     </a>
@@ -269,7 +277,7 @@ function renderStackUI() {
         }
     });
 
-    // 2. Active links (Header & Mobile Tab Bar)
+    // 2. Active links
     const navLinks = document.querySelectorAll('.nav-link, .mobile-app-tab');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
@@ -389,15 +397,6 @@ function bindEvents() {
             resetStack();
         };
     });
-
-    const toggleBtn = document.querySelector('.mobile-toggle');
-    if (toggleBtn) {
-        toggleBtn.onclick = function(e) {
-            e.preventDefault();
-            const navMenu = document.querySelector('.nav-menu');
-            if (navMenu) navMenu.classList.toggle('mobile-open');
-        };
-    }
 }
 
 function escapeHtml(str) {
