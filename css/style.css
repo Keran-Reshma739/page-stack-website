@@ -1253,9 +1253,10 @@ html, body {
         font-size: 0.55rem;
     }
 
-    .stack-item {
-        padding: 0.55rem 0.5rem;
+    .mem-addr {
+        display: none;
     }
+}
 
 /* --------------------------------------------------------------------------
  * Floating Stack Action Button (FAB) & Pop-Up Modal Container

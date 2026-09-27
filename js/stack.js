@@ -469,6 +469,15 @@ function bindEvents() {
             resetStack();
         };
     });
+
+    const triggers = document.querySelectorAll('.btn-stack-trigger, #floating-stack-fab');
+    const modal = document.getElementById('stack-modal-overlay');
+    triggers.forEach(trig => {
+        trig.onclick = function(e) {
+            e.preventDefault();
+            if (modal) modal.classList.add('active');
+        };
+    });
 }
 
 function escapeHtml(str) {
@@ -483,4 +492,11 @@ function escapeHtml(str) {
 if (typeof window !== 'undefined') window.PageStack = PageStack;
 if (typeof global !== 'undefined') global.PageStack = PageStack;
 
-document.addEventListener('DOMContentLoaded', initPageStack);
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageStack);
+    } else {
+        initPageStack();
+    }
+}
+
