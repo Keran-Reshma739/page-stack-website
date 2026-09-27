@@ -1,7 +1,6 @@
 /* --------------------------------------------------------------------------
- * PageStack - Mobile-First Responsive Stylesheet
- * 100% Pixel-Perfect across Mobile (320px+), Tablet, and Desktop
- * Prevents horizontal scrolling, body overflow, and layout squishing
+ * PageStack - Mobile App Architecture & Responsive Stylesheet
+ * Responsive across Mobile (320px+), Tablet, and Desktop
  * -------------------------------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
@@ -718,7 +717,7 @@ html, body {
 /* Toast */
 .stack-toast {
     position: fixed;
-    bottom: 1rem;
+    bottom: 4.5rem;
     right: 1rem;
     left: 1rem;
     max-width: 360px;
@@ -742,7 +741,7 @@ html, body {
     opacity: 1;
 }
 
-/* Footer */
+/* Site Footer */
 .site-footer {
     width: 100%;
     max-width: 1200px;
@@ -752,6 +751,104 @@ html, body {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------------------
+ * Mobile App Bottom Bar & Mobile Floating Bar
+ * -------------------------------------------------------------------------- */
+
+.mobile-app-bottom-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-color);
+    z-index: 950;
+    box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.mobile-app-bottom-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-app-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 4px 6px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.68rem;
+    font-weight: 600;
+    min-width: 44px;
+    transition: all 0.2s ease;
+}
+
+.mobile-app-tab .tab-icon {
+    font-size: 1.15rem;
+}
+
+.mobile-app-tab.active {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.mobile-app-tab.active .tab-icon {
+    transform: translateY(-2px);
+}
+
+/* Mobile Floating Controller Bar */
+.mobile-floating-stack-bar {
+    display: none;
+    position: fixed;
+    bottom: 66px;
+    left: 1rem;
+    right: 1rem;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 0.5rem 0.85rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+    z-index: 900;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #334155;
+}
+
+.m-stack-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+}
+
+.m-stack-icon { font-size: 1rem; }
+.m-stack-text { font-weight: 600; }
+.m-stack-badge {
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+
+.m-pop-btn {
+    padding: 0.35rem 0.85rem !important;
+    font-size: 0.78rem !important;
+    min-height: 32px !important;
+    border-radius: 20px !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -765,6 +862,18 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    .mobile-app-bottom-bar {
+        display: flex;
+    }
+
+    .mobile-floating-stack-bar {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 120px;
+    }
+
     .mobile-toggle {
         display: inline-flex;
     }

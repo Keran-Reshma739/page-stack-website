@@ -1,12 +1,12 @@
 /**
- * PageStack Class - Professional Mobile-First Implementation
- * Manages browser/page navigation history with LIFO (Last In, First Out) principle,
- * operation metrics tracking, memory simulation, and localStorage persistence.
+ * PageStack Class - Mobile App Architecture Implementation
+ * Features: Automatic Mobile App Tab Bar, Floating Mobile Stack Controller,
+ * LIFO navigation engine, and LocalStorage persistence.
  */
 class PageStack {
     constructor() {
-        this.storageKey = 'stack_page_history_v2';
-        this.metricsKey = 'stack_page_metrics_v2';
+        this.storageKey = 'stack_page_history_v3';
+        this.metricsKey = 'stack_page_metrics_v3';
         
         this.items = this.loadStack();
         this.metrics = this.loadMetrics();
@@ -54,7 +54,6 @@ class PageStack {
         this.saveMetrics();
     }
 
-    // PUSH: Add element to top of stack
     push(page) {
         if (!page || !page.name || !page.url) return;
         
@@ -74,7 +73,6 @@ class PageStack {
         this.saveMetrics();
     }
 
-    // POP: Remove and return top element from stack
     pop() {
         if (this.isEmpty()) return null;
         
@@ -88,7 +86,6 @@ class PageStack {
         return popped;
     }
 
-    // PEEK: Inspect top element
     peek() {
         if (this.isEmpty()) return null;
         return this.items[this.items.length - 1];
@@ -122,17 +119,17 @@ class PageStack {
 const pageStack = new PageStack();
 
 /**
- * Metadata for all 8 Pages
+ * Metadata Map
  */
 const PAGE_META = {
-    'index.html': { name: 'Home', icon: '🏠', subtitle: 'Interactive Stack Simulator & Core Concepts' },
-    'about.html': { name: 'About', icon: 'ℹ️', subtitle: 'Algorithm Complexity, Architecture & Storage' },
-    'services.html': { name: 'Services', icon: '⚙️', subtitle: 'DSA Suite, Memory Inspection & Engine Tools' },
-    'products.html': { name: 'Products', icon: '📦', subtitle: 'Data Structure Library & Component Suite' },
-    'gallery.html': { name: 'Gallery', icon: '🖼️', subtitle: 'Visual Flowcharts, Call Stack Diagrams & Diagrams' },
-    'blog.html': { name: 'Blog', icon: '📰', subtitle: 'Engineering Articles & Call Stack In-Depth' },
-    'contact.html': { name: 'Contact', icon: '📞', subtitle: 'Developer Hub, QA Forum & Code Submissions' },
-    'profile.html': { name: 'Profile', icon: '👤', subtitle: 'Session Analytics, Trajectory & Stack Logs' }
+    'index.html': { name: 'Home', icon: '🏠', subtitle: 'Interactive Stack Simulator' },
+    'about.html': { name: 'About', icon: 'ℹ️', subtitle: 'Algorithm Complexity & Storage' },
+    'services.html': { name: 'Services', icon: '⚙️', subtitle: 'DSA Suite & Engine Tools' },
+    'products.html': { name: 'Products', icon: '📦', subtitle: 'Data Structure Component Library' },
+    'gallery.html': { name: 'Gallery', icon: '🖼️', subtitle: 'Visual Flowcharts & Memory Diagrams' },
+    'blog.html': { name: 'Blog', icon: '📰', subtitle: 'Computer Science Engineering Blog' },
+    'contact.html': { name: 'Contact', icon: '📞', subtitle: 'Developer Hub & QA Forum' },
+    'profile.html': { name: 'Profile', icon: '👤', subtitle: 'Session Analytics & Trajectory' }
 };
 
 function getCurrentPageFilename() {
@@ -158,8 +155,49 @@ function initPageStack() {
         }
     }
 
+    // Inject Mobile Navigation Component dynamically if not present
+    injectMobileComponents();
+
     renderStackUI();
     bindEvents();
+}
+
+function injectMobileComponents() {
+    if (document.querySelector('.mobile-app-bottom-bar')) return;
+
+    const currentFilename = getCurrentPageFilename();
+
+    // 1. Mobile Bottom Tab Bar
+    const bottomBarHtml = `
+        <nav class="mobile-app-bottom-bar">
+            ${Object.keys(PAGE_META).map(file => {
+                const item = PAGE_META[file];
+                const isActive = (file === currentFilename) ? 'active' : '';
+                return `
+                    <a href="${file}" class="mobile-app-tab ${isActive}" data-page="${item.name}">
+                        <span class="tab-icon">${item.icon}</span>
+                        <span class="tab-label">${item.name}</span>
+                    </a>
+                `;
+            }).join('')}
+        </nav>
+    `;
+
+    // 2. Mobile Floating Stack Bar
+    const floatingBarHtml = `
+        <div class="mobile-floating-stack-bar">
+            <div class="m-stack-info">
+                <span class="m-stack-icon">🥞</span>
+                <span class="m-stack-text">TOP: <strong id="m-top-name">Home</strong></span>
+                <span class="m-stack-badge" id="m-stack-size">1</span>
+            </div>
+            <button class="btn btn-back m-pop-btn">← POP</button>
+        </div>
+    `;
+
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = bottomBarHtml + floatingBarHtml;
+    document.body.appendChild(wrapper);
 }
 
 function navigateToPage(pageName, url) {
@@ -217,6 +255,7 @@ function renderStackUI() {
     const stackItems = pageStack.display();
     const metrics = pageStack.getMetrics();
     const currentFilename = getCurrentPageFilename();
+    const topItem = pageStack.peek();
 
     // 1. Back button state
     const backBtns = document.querySelectorAll('.btn-back');
@@ -230,8 +269,8 @@ function renderStackUI() {
         }
     });
 
-    // 2. Active links
-    const navLinks = document.querySelectorAll('.nav-link');
+    // 2. Active links (Header & Mobile Tab Bar)
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-app-tab');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentFilename) {
@@ -241,7 +280,14 @@ function renderStackUI() {
         }
     });
 
-    // 3. Render Visual Stack
+    // 3. Mobile Floating Controller Updates
+    const mTopName = document.getElementById('m-top-name');
+    if (mTopName) mTopName.textContent = topItem ? topItem.name : 'None';
+
+    const mStackSize = document.getElementById('m-stack-size');
+    if (mStackSize) mStackSize.textContent = pageStack.size();
+
+    // 4. Render Visual Stack
     const container = document.getElementById('visual-stack-container');
     if (container) {
         if (stackItems.length === 0) {
@@ -249,7 +295,6 @@ function renderStackUI() {
         } else {
             let html = '<div class="stack-items-wrapper">';
             
-            // Render from TOP to BOTTOM for realistic visual stack layering
             for (let index = stackItems.length - 1; index >= 0; index--) {
                 const item = stackItems[index];
                 const isTop = (index === stackItems.length - 1);
@@ -286,7 +331,7 @@ function renderStackUI() {
         }
     }
 
-    // 4. Update Inspector & Path Summary
+    // 5. Update Inspector
     const arrayCodeElem = document.getElementById('ds-array-code');
     if (arrayCodeElem) {
         const names = stackItems.map(i => `"${i.name}"`);
@@ -295,8 +340,7 @@ function renderStackUI() {
 
     const peekCodeElem = document.getElementById('ds-peek-value');
     if (peekCodeElem) {
-        const top = pageStack.peek();
-        peekCodeElem.textContent = top ? `"${top.name}"` : 'null';
+        peekCodeElem.textContent = topItem ? `"${topItem.name}"` : 'null';
     }
 
     const sizeCodeElem = document.getElementById('ds-size-value');
@@ -304,7 +348,7 @@ function renderStackUI() {
         sizeCodeElem.textContent = pageStack.size();
     }
 
-    // 5. Update Metrics Counters
+    // 6. Metrics Counters
     const pushCountElem = document.getElementById('stat-push-count');
     if (pushCountElem) pushCountElem.textContent = metrics.pushes;
 
@@ -319,7 +363,6 @@ function renderStackUI() {
 }
 
 function bindEvents() {
-    // Nav Links
     const links = document.querySelectorAll('a[data-page]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -328,14 +371,9 @@ function bindEvents() {
             const pageName = this.getAttribute('data-page');
             const targetUrl = this.getAttribute('href');
             navigateToPage(pageName, targetUrl);
-            
-            // Close mobile menu if open
-            const navMenu = document.querySelector('.nav-menu');
-            if (navMenu) navMenu.classList.remove('mobile-open');
         });
     });
 
-    // Back buttons
     const backBtns = document.querySelectorAll('.btn-back');
     backBtns.forEach(btn => {
         btn.onclick = function(e) {
@@ -344,7 +382,6 @@ function bindEvents() {
         };
     });
 
-    // Reset button
     const resetBtns = document.querySelectorAll('.btn-reset-stack');
     resetBtns.forEach(btn => {
         btn.onclick = function(e) {
@@ -353,7 +390,6 @@ function bindEvents() {
         };
     });
 
-    // Mobile Hamburger Menu Toggle
     const toggleBtn = document.querySelector('.mobile-toggle');
     if (toggleBtn) {
         toggleBtn.onclick = function(e) {
