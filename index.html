@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Home - Page Stack History Demo</title>
-    <link rel="stylesheet" href="css/style.css?v=4.0">
-
-    
-
+    <title>StackMart - Next-Gen Tech & Electronics Store</title>
+    <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
@@ -15,32 +12,32 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo" data-page="Home">
-                <div class="brand-icon">🥞</div>
-                <span>PageStack</span>
+                <div class="brand-icon">🛒</div>
+                <span>StackMart</span>
                 <span class="brand-badge">LIFO Engine</span>
             </a>
-            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active" data-page="Home">Home</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
+                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
                     <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
-                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
-                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Support">Support</a></li>
                     <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Header -->
+    <!-- Hero Banner -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>🏠</span> Home Page</h1>
-                <p class="hero-subtitle">Interactive Stack Data Structure Simulator & Browser History Demonstration</p>
+                <h1><span>🛒</span> Welcome to StackMart</h1>
+                <p class="hero-subtitle">Next-Gen Tech, Laptops & Electronics &bull; Navigation Powered by Stack (LIFO)</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -52,114 +49,91 @@
     <!-- Main Content Layout -->
     <main class="main-layout">
         
-        <!-- Left Main Content Column -->
         <section class="content-column">
             
-            <div class="content-card">
-                <h2 class="card-heading"><span>💡</span> Interactive Navigation Simulator</h2>
-                <p class="card-intro">
-                    This platform demonstrates how web browsers manage page history using a 
-                    <strong>Stack Data Structure (LIFO - Last In, First Out)</strong>. 
-                    Clicking links below performs a <code>push()</code> operation. Clicking <strong>Back (POP)</strong> 
-                    removes the top element and navigates to the previous page.
+            <!-- Featured Store Banner -->
+            <div class="content-card" style="background: linear-gradient(135deg, var(--primary-soft) 0%, #ffffff 100%);">
+                <span style="background: var(--primary); color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">🔥 Flash Sale &bull; 25% OFF</span>
+                <h2 style="font-size: 1.6rem; font-weight: 800; margin: 0.6rem 0 0.4rem 0; color: var(--text-primary);">ProBook Ultra 15" M3 Max Workstation</h2>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                    The ultimate laptop for software engineers and creators. 36GB RAM, 1TB SSD, 120Hz Liquid Retina Display.
                 </p>
-
-                <div class="quick-nav-card">
-                    <div class="quick-nav-header">Navigate to Target Page (PUSH)</div>
-                    <div class="quick-nav-links">
-                        <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
-                        <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
-                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
-                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
-                        <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
-                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
-                        <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
-                    </div>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <a href="product-detail.html" class="btn btn-back" data-page="Detail">💻 View Details & Specs (PUSH)</a>
+                    <a href="products.html" class="quick-nav-link" data-page="Catalog">📱 Browse Full Catalog</a>
                 </div>
             </div>
 
-            <!-- "How the Stack Works" Educational Section -->
+            <!-- Store Product Categories -->
             <div class="content-card">
-                <h2 class="card-heading"><span>⚙️</span> How the Stack Works</h2>
-                <p class="card-intro">
-                    A Stack is a linear data structure that follows a strict <strong>Last In, First Out (LIFO)</strong> order. 
-                    Elements are inserted and removed from the exact same end, known as the <strong>TOP</strong> of the stack.
-                </p>
-
+                <h2 class="card-heading"><span>📦</span> Top Electronics Categories</h2>
+                
                 <div class="feature-grid">
-                    <div class="feature-box">
-                        <div class="feature-icon">📥</div>
-                        <div class="feature-title">New Page &rarr; PUSH</div>
-                        <div class="feature-desc">Visiting a new page pushes a node onto the top of the stack.</div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">📤</div>
-                        <div class="feature-title">Back Button &rarr; POP</div>
-                        <div class="feature-desc">Popping removes the current top element and exposes the previous page.</div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">👁️</div>
-                        <div class="feature-title">Top Element &rarr; PEEK</div>
-                        <div class="feature-desc">The element at the top of the stack always represents the active page.</div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">⚡</div>
-                        <div class="feature-title">Principle &rarr; LIFO</div>
-                        <div class="feature-desc">Last In, First Out property guarantees reverse-chronological order.</div>
-                    </div>
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
+                        <div class="feature-box">
+                            <div class="feature-icon">💻</div>
+                            <div class="feature-title">Laptops & PCs</div>
+                            <div class="feature-desc">Workstations, ultrabooks, and high-performance gaming rigs.</div>
+                        </div>
+                    </a>
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
+                        <div class="feature-box">
+                            <div class="feature-icon">🎧</div>
+                            <div class="feature-title">Audio & Headphones</div>
+                            <div class="feature-desc">Wireless ANC headphones, studio monitors, and earbuds.</div>
+                        </div>
+                    </a>
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
+                        <div class="feature-box">
+                            <div class="feature-icon">⌚</div>
+                            <div class="feature-title">Smart Wearables</div>
+                            <div class="feature-desc">Fitness trackers, smartwatches, and health monitors.</div>
+                        </div>
+                    </a>
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
+                        <div class="feature-box">
+                            <div class="feature-icon">⌨️</div>
+                            <div class="feature-title">Accessories</div>
+                            <div class="feature-desc">Mechanical keyboards, ergonomic mice, and 4K displays.</div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <!-- Real World Applications -->
+            <!-- Explanation Banner: How Stack Powers E-Commerce Trajectory -->
             <div class="content-card">
-                <h2 class="card-heading"><span>🌐</span> Real-World Applications of Stacks</h2>
-                <div class="ds-table-wrapper">
-                    <table class="ds-table">
-                        <thead>
-                            <tr>
-                                <th>Use Case</th>
-                                <th>PUSH Operation</th>
-                                <th>POP Operation</th>
-                                <th>LIFO Purpose</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Browser History</strong></td>
-                                <td>Visiting new URL</td>
-                                <td>Clicking Back button</td>
-                                <td>Returns to last visited page</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Function Call Stack</strong></td>
-                                <td>Function invocation</td>
-                                <td>Function return</td>
-                                <td>Manages execution context & local vars</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Undo / Redo Engine</strong></td>
-                                <td>User edit action</td>
-                                <td>Ctrl+Z (Undo)</td>
-                                <td>Reverts most recent change first</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Parentheses Matching</strong></td>
-                                <td>Opening bracket '('</td>
-                                <td>Closing bracket ')'</td>
-                                <td>Validates nested syntax structures</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h2 class="card-heading"><span>⚙️</span> How Stack Powers E-Commerce Navigation</h2>
+                <p class="card-intro">
+                    As you shop across our 10 store pages (Category &rarr; Product Details &rarr; Cart &rarr; Checkout), 
+                    StackMart logs every page visit as a <code>PUSH</code> operation onto the **Page History Stack**. 
+                    Clicking <strong>Back (POP)</strong> seamlessly unwinds your shopping trajectory in strict <strong>LIFO (Last In, First Out)</strong> order!
+                </p>
+            </div>
+
+            <!-- Quick Navigation Card (10 Store Pages) -->
+            <div class="content-card">
+                <div class="quick-nav-card">
+                    <div class="quick-nav-header">Explore All 10 Store Pages (PUSH Trajectory)</div>
+                    <div class="quick-nav-links">
+                        <a href="index.html" class="quick-nav-link" data-page="Home">1. Home <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog">2. Catalog <span>→</span></a>
+                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail">3. Detail <span>→</span></a>
+                        <a href="cart.html" class="quick-nav-link" data-page="Cart">4. Cart 🛒 <span>→</span></a>
+                        <a href="about.html" class="quick-nav-link" data-page="About">5. About <span>→</span></a>
+                        <a href="services.html" class="quick-nav-link" data-page="Services">6. Services <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Showroom">7. Showroom <span>→</span></a>
+                        <a href="blog.html" class="quick-nav-link" data-page="Blog">8. Blog <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Support">9. Support <span>→</span></a>
+                        <a href="profile.html" class="quick-nav-link" data-page="Profile">10. Profile <span>→</span></a>
+                    </div>
                 </div>
             </div>
 
         </section>
 
-        <!-- Right Column: Visual Stack & State Inspector -->
+        <!-- Sidebar Column: Stack Visualizer -->
         <aside class="sidebar-column">
             <div class="sidebar-stack-wrapper">
-                
-                <!-- Visual Memory Stack Card -->
                 <div class="stack-card">
                     <div class="stack-header">
                         <div class="stack-title">
@@ -168,7 +142,6 @@
                         <span class="stack-counter">Depth: <span id="stack-size-count">0</span></span>
                     </div>
 
-                    <!-- Operation Metrics Dashboard -->
                     <div class="stats-row">
                         <div class="stat-card">
                             <div class="stat-label">PUSHES</div>
@@ -184,30 +157,25 @@
                         </div>
                     </div>
 
-                    <!-- Visual Layered Stack Container -->
-                    <div class="stack-viewport" id="visual-stack-container">
-                        <!-- Dynamic stack items rendered here -->
-                    </div>
+                    <div class="stack-viewport" id="visual-stack-container"></div>
                 </div>
 
-                <!-- Live Data Structure Inspector -->
                 <div class="ds-inspector-card">
                     <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
                     <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
-                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [ "Home" ];</div>
+                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
                     <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Home"</span></div>
                     <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
                 </div>
-
             </div>
         </aside>
 
     </main>
 
     <footer class="site-footer">
-        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+        <p>StackMart Store &bull; Page History Stack Demonstration (LIFO Engine)</p>
     </footer>
 
-    <script src="js/stack.js?v=4.0"></script>
+    <script src="js/stack.js?v=5.0"></script>
 </body>
 </html>

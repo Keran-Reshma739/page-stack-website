@@ -1,12 +1,12 @@
 /**
- * PageStack Class - Elite Software Architecture
- * Features: Dynamic 5-Tab Mobile Navigation, Floating LIFO Controller Bar,
- * Real-time Virtual Memory Hex Pointers, and HTML5 LocalStorage persistence.
+ * PageStack Engine - StackMart E-Commerce Platform v5.0
+ * Manages 10-page browser history trajectory with LIFO (Last In, First Out) principle,
+ * virtual memory hex address simulation, and HTML5 LocalStorage persistence.
  */
 class PageStack {
     constructor() {
-        this.storageKey = 'stack_page_history_v4';
-        this.metricsKey = 'stack_page_metrics_v4';
+        this.storageKey = 'stackmart_page_history_v5';
+        this.metricsKey = 'stackmart_page_metrics_v5';
         
         this.items = this.loadStack();
         this.metrics = this.loadMetrics();
@@ -54,6 +54,7 @@ class PageStack {
         this.saveMetrics();
     }
 
+    // PUSH: Add visited page to top of stack
     push(page) {
         if (!page || !page.name || !page.url) return;
         
@@ -73,6 +74,7 @@ class PageStack {
         this.saveMetrics();
     }
 
+    // POP: Remove and return top page
     pop() {
         if (this.isEmpty()) return null;
         
@@ -86,6 +88,7 @@ class PageStack {
         return popped;
     }
 
+    // PEEK: Inspect top element
     peek() {
         if (this.isEmpty()) return null;
         return this.items[this.items.length - 1];
@@ -119,27 +122,29 @@ class PageStack {
 const pageStack = new PageStack();
 
 /**
- * All Page Metadata
+ * 10 Pages Metadata Map for StackMart Store
  */
 const PAGE_META = {
-    'index.html': { name: 'Home', icon: '🏠', subtitle: 'Interactive Stack Simulator' },
-    'about.html': { name: 'About', icon: 'ℹ️', subtitle: 'Algorithm Complexity & Storage' },
-    'services.html': { name: 'Services', icon: '⚙️', subtitle: 'DSA Suite & Engine Tools' },
-    'products.html': { name: 'Products', icon: '📦', subtitle: 'Data Structure Component Library' },
-    'gallery.html': { name: 'Gallery', icon: '🖼️', subtitle: 'Visual Flowcharts & Memory Diagrams' },
-    'blog.html': { name: 'Blog', icon: '📰', subtitle: 'Computer Science Engineering Blog' },
-    'contact.html': { name: 'Contact', icon: '📞', subtitle: 'Developer Hub & QA Forum' },
-    'profile.html': { name: 'Profile', icon: '👤', subtitle: 'Session Analytics & Trajectory' }
+    'index.html': { name: 'Home', icon: '🛒', title: 'StackMart Storefront', subtitle: 'Next-Gen Electronics & Tech Store' },
+    'products.html': { name: 'Catalog', icon: '📱', title: 'Tech Catalog', subtitle: 'Explore Laptops, Audio & Accessories' },
+    'product-detail.html': { name: 'Detail', icon: '💻', title: 'Product Details', subtitle: 'ProBook Ultra 15" - Specs & Reviews' },
+    'cart.html': { name: 'Cart', icon: '🛍️', title: 'Shopping Cart', subtitle: 'Order Summary & Checkout Preview' },
+    'about.html': { name: 'About', icon: 'ℹ️', title: 'About StackMart', subtitle: 'Supply Chain & Logistics Network' },
+    'services.html': { name: 'Services', icon: '⚙️', title: 'Store Services', subtitle: 'Warranty, Express Shipping & Support' },
+    'gallery.html': { name: 'Gallery', icon: '🖼️', title: 'Showroom', subtitle: 'Product Unboxing & High-Res Gallery' },
+    'blog.html': { name: 'Blog', icon: '📰', title: 'Tech Blog', subtitle: 'Buying Guides & Expert Reviews' },
+    'contact.html': { name: 'Support', icon: '📞', title: 'Help Desk', subtitle: '24/7 Customer Service & Store Locator' },
+    'profile.html': { name: 'Profile', icon: '👤', title: 'User Profile', subtitle: 'Account Dashboard & Session History' }
 };
 
 /**
- * 5 Primary Clean Mobile Bottom Tabs (Avoids text line-wrapping on smartphones)
+ * 5 Primary Mobile Bottom Tabs
  */
 const MOBILE_PRIMARY_TABS = [
-    { file: 'index.html', name: 'Home', icon: '🏠' },
-    { file: 'about.html', name: 'About', icon: 'ℹ️' },
-    { file: 'services.html', name: 'Services', icon: '⚙️' },
-    { file: 'products.html', name: 'Products', icon: '📦' },
+    { file: 'index.html', name: 'Store', icon: '🛒' },
+    { file: 'products.html', name: 'Catalog', icon: '📱' },
+    { file: 'cart.html', name: 'Cart', icon: '🛍️' },
+    { file: 'blog.html', name: 'Blog', icon: '📰' },
     { file: 'profile.html', name: 'Profile', icon: '👤' }
 ];
 
@@ -154,7 +159,7 @@ function getCurrentPageFilename() {
 
 function initPageStack() {
     const currentFilename = getCurrentPageFilename();
-    const meta = PAGE_META[currentFilename] || { name: 'Home', icon: '🏠' };
+    const meta = PAGE_META[currentFilename] || { name: 'Store', icon: '🛒' };
     const currentPageObj = { name: meta.name, url: currentFilename, icon: meta.icon };
 
     if (pageStack.isEmpty()) {
@@ -176,7 +181,7 @@ function injectMobileComponents() {
 
     const currentFilename = getCurrentPageFilename();
 
-    // 1. Mobile Bottom Tab Bar (5 Clean Tabs)
+    // 1. Mobile Bottom Tab Bar (5 Clean Primary Tabs)
     const bottomBarHtml = `
         <nav class="mobile-app-bottom-bar">
             ${MOBILE_PRIMARY_TABS.map(item => {
@@ -191,7 +196,7 @@ function injectMobileComponents() {
         </nav>
     `;
 
-    // 2. Mobile Floating Stack Bar
+    // 2. Mobile Floating Stack Controller Bar
     const floatingBarHtml = `
         <div class="mobile-floating-stack-bar">
             <div class="m-stack-info">
@@ -235,7 +240,7 @@ function navigateBack() {
 
 function resetStack() {
     const currentFilename = getCurrentPageFilename();
-    const meta = PAGE_META[currentFilename] || { name: 'Home', icon: '🏠' };
+    const meta = PAGE_META[currentFilename] || { name: 'Home', icon: '🛒' };
     
     pageStack.clear();
     pageStack.push({ name: meta.name, url: currentFilename, icon: meta.icon });
@@ -277,7 +282,7 @@ function renderStackUI() {
         }
     });
 
-    // 2. Active links
+    // 2. Active links in Navbar & Mobile Tab Bar
     const navLinks = document.querySelectorAll('.nav-link, .mobile-app-tab');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
@@ -295,7 +300,7 @@ function renderStackUI() {
     const mStackSize = document.getElementById('m-stack-size');
     if (mStackSize) mStackSize.textContent = pageStack.size();
 
-    // 4. Render Visual Stack
+    // 4. Render Visual Stack Memory Layer
     const container = document.getElementById('visual-stack-container');
     if (container) {
         if (stackItems.length === 0) {
@@ -328,7 +333,7 @@ function renderStackUI() {
                             </div>
                         </div>
                         <div class="stack-item-badges">
-                            ${isTop ? '<span class="badge badge-top">👉 TOP</span>' : ''}
+                            ${isTop ? '<span class="badge badge-top">👉 TOP [SP]</span>' : ''}
                             ${isBottom && !isTop ? '<span class="badge badge-bottom">BASE</span>' : ''}
                         </div>
                     </div>
@@ -339,7 +344,7 @@ function renderStackUI() {
         }
     }
 
-    // 5. Update Inspector
+    // 5. Update Inspector Terminal
     const arrayCodeElem = document.getElementById('ds-array-code');
     if (arrayCodeElem) {
         const names = stackItems.map(i => `"${i.name}"`);

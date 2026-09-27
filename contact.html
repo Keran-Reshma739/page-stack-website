@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Contact - Page Stack History Demo</title>
-    <link rel="stylesheet" href="css/style.css?v=4.0">
-
-    
-
+    <title>Customer Support - StackMart Store</title>
+    <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
@@ -15,32 +12,32 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo" data-page="Home">
-                <div class="brand-icon">🥞</div>
-                <span>PageStack</span>
+                <div class="brand-icon">🛒</div>
+                <span>StackMart</span>
                 <span class="brand-badge">LIFO Engine</span>
             </a>
-            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
+                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
                     <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
-                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
-                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link active" data-page="Contact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link active" data-page="Support">Support</a></li>
                     <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Header -->
+    <!-- Hero Banner -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>📞</span> Project Contact & Developer QA</h1>
-                <p class="hero-subtitle">Academic Project Details, Technical Support & Code Submissions</p>
+                <h1><span>📞</span> 24/7 Customer Support & Help Desk</h1>
+                <p class="hero-subtitle">Order Inquiries, Store Locators & Order Tracking</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -55,55 +52,46 @@
         <section class="content-column">
             
             <div class="content-card">
-                <h2 class="card-heading"><span>📬</span> Send Feedback / Questions</h2>
-                <p class="card-intro">
-                    Submit questions regarding the Stack Data Structure implementation or college project evaluation details:
-                </p>
-
-                <form onsubmit="event.preventDefault(); alert('Feedback submitted successfully!');" style="display: grid; gap: 1rem; margin-top: 1rem;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <h2 class="card-heading"><span>📬</span> Contact Support Team</h2>
+                <form onsubmit="event.preventDefault(); alert('Support ticket created!');" style="display: grid; gap: 1rem; margin-top: 0.8rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                         <div>
-                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Name</label>
-                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);" required>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Full Name</label>
+                            <input type="text" placeholder="Alex Morgan" style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);" required>
                         </div>
                         <div>
-                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Email</label>
-                            <input type="email" placeholder="student@college.edu" style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);" required>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Order ID (Optional)</label>
+                            <input type="text" placeholder="#ORD-94821" style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);">
                         </div>
                     </div>
                     <div>
-                        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Topic</label>
+                        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Issue Category</label>
                         <select style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);">
-                            <option>PageStack LIFO Implementation</option>
-                            <option>LocalStorage Persistence Sync</option>
-                            <option>Time & Space Complexity Analysis</option>
-                            <option>Other Feedback</option>
+                            <option>Order Delivery & Tracking</option>
+                            <option>Product Warranty & Repairs</option>
+                            <option>Returns & Refund Request</option>
+                            <option>Stack Navigation Inquiries</option>
                         </select>
                     </div>
                     <div>
                         <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem;">Message</label>
-                        <textarea rows="3" placeholder="Enter your inquiry..." style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);"></textarea>
+                        <textarea rows="3" placeholder="Describe your question..." style="width: 100%; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-main);"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-back" style="justify-self: start;">Submit Inquiry</button>
+                    <button type="submit" class="btn btn-back" style="justify-self: start;">Submit Ticket</button>
                 </form>
             </div>
 
             <!-- FAQ Accordion -->
             <div class="content-card">
-                <h2 class="card-heading"><span>❓</span> Frequently Asked Questions (FAQ)</h2>
-                
-                <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                <h2 class="card-heading"><span>❓</span> Customer Help & FAQ</h2>
+                <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.8rem;">
                     <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-color);">
-                        <strong style="color: var(--primary);">Q: Why doesn't the Back button duplicate stack items?</strong>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.3rem;">
-                            When Back (POP) is clicked, <code>stack.pop()</code> removes the top element. On loading the target page, <code>stack.peek()</code> matches the target URL, preventing redundant <code>push()</code> operations.
-                        </p>
+                        <strong style="color: var(--primary);">Q: How long does express shipping take?</strong>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">All orders placed before 2 PM local time ship same-day with 24-48 hour delivery.</p>
                     </div>
                     <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-color);">
-                        <strong style="color: var(--primary);">Q: How is stack state persisted across full browser refreshes?</strong>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.3rem;">
-                            State is serialized into JSON and stored in HTML5 <code>localStorage.setItem('stack_page_history_v2', ...)</code> after every mutation.
-                        </p>
+                        <strong style="color: var(--primary);">Q: How does the Back button work during checkout?</strong>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">The Back (POP) button steps back to your previous shopping page without losing your cart state!</p>
                     </div>
                 </div>
             </div>
@@ -111,13 +99,15 @@
             <!-- Quick Navigation Card -->
             <div class="content-card">
                 <div class="quick-nav-card">
-                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-header">Continue Store Trajectory (PUSH)</div>
                     <div class="quick-nav-links">
                         <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog">Catalog <span>→</span></a>
+                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail">Detail <span>→</span></a>
+                        <a href="cart.html" class="quick-nav-link" data-page="Cart">Cart 🛒 <span>→</span></a>
                         <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
                         <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
-                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
-                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Showroom">Showroom <span>→</span></a>
                         <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
                         <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
                     </div>
@@ -126,7 +116,7 @@
 
         </section>
 
-        <!-- Right Column: Visual Stack -->
+        <!-- Sidebar Column: Stack Visualizer -->
         <aside class="sidebar-column">
             <div class="sidebar-stack-wrapper">
                 <div class="stack-card">
@@ -159,7 +149,7 @@
                     <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
                     <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
                     <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
-                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Contact"</span></div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Support"</span></div>
                     <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
                 </div>
             </div>
@@ -168,9 +158,9 @@
     </main>
 
     <footer class="site-footer">
-        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+        <p>StackMart Store &bull; Page History Stack Demonstration (LIFO Engine)</p>
     </footer>
 
-    <script src="js/stack.js?v=4.0"></script>
+    <script src="js/stack.js?v=5.0"></script>
 </body>
 </html>

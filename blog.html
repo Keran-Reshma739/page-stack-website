@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Blog - Page Stack History Demo</title>
-    <link rel="stylesheet" href="css/style.css?v=4.0">
-
-    
-
+    <title>Tech Blog & Buying Guides - StackMart Store</title>
+    <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
@@ -15,32 +12,32 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo" data-page="Home">
-                <div class="brand-icon">🥞</div>
-                <span>PageStack</span>
+                <div class="brand-icon">🛒</div>
+                <span>StackMart</span>
                 <span class="brand-badge">LIFO Engine</span>
             </a>
-            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
+                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
                     <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
-                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
-                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link active" data-page="Blog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Support">Support</a></li>
                     <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Header -->
+    <!-- Hero Banner -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>📰</span> Computer Science & DSA Engineering Blog</h1>
-                <p class="hero-subtitle">Deep Dives into Browser Engines, Call Stacks, and Algorithm Memory Models</p>
+                <h1><span>📰</span> Tech News & Buying Guides</h1>
+                <p class="hero-subtitle">Expert Hardware Reviews, Developer Setup Guides & Benchmarks</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -56,52 +53,36 @@
             
             <!-- Article 1 -->
             <div class="content-card">
-                <h2 class="card-heading"><span>📜</span> Article 1: Single-Stack vs Dual-Stack History Architectures</h2>
-                <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Published by Computer Science Dept &bull; 5 min read</div>
+                <h2 class="card-heading"><span>📜</span> Top 5 Laptops for Software Engineers in 2026</h2>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.8rem; font-weight: 600;">By Hardware Reviews Team &bull; 6 min read</div>
                 <p class="card-intro">
-                    Modern web browsers like Chrome, Firefox, and Safari actually maintain <strong>two distinct stacks</strong> to support full back-and-forward navigation:
+                    We tested 25 workstation laptops running Docker containers, Rust compilers, and Xcode builds. Here are the top performers for compilation speed and thermal throttling resistance.
                 </p>
-
-                <ul style="margin-left: 1.25rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
-                    <li><strong>Back Stack:</strong> Stores visited pages in LIFO order. When you click a link, the target URL is pushed to the Back Stack.</li>
-                    <li><strong>Forward Stack:</strong> Holds pages popped from the Back Stack when you click the Back button.</li>
-                    <li><strong>Branching Rule:</strong> If you navigate to a <em>new</em> URL after going back, the Forward Stack is completely wiped!</li>
-                </ul>
-
-                <div class="code-block">
-<span class="code-comment">// Dual Stack Architecture Simulation</span>
-<span class="code-keyword">function</span> <span class="code-func">visitNewPage</span>(url) {
-    backStack.<span class="code-func">push</span>(url);
-    forwardStack.<span class="code-func">clear</span>(); <span class="code-comment">// Wipes forward history upon branching navigation</span>
-}
-                </div>
+                <a href="product-detail.html" class="quick-nav-link" data-page="Detail" style="display: inline-flex; width: auto; background: var(--primary); color: #fff;">Read Full Review (PUSH)</a>
             </div>
 
             <!-- Article 2 -->
             <div class="content-card">
-                <h2 class="card-heading"><span>⚡</span> Article 2: How the V8 Engine Manages the JavaScript Call Stack</h2>
-                <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Published by System Architecture Group &bull; 7 min read</div>
+                <h2 class="card-heading"><span>🎧</span> Active Noise Cancellation Breakdown: ANC vs PNC</h2>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.8rem; font-weight: 600;">By Audio Engineering Lab &bull; 4 min read</div>
                 <p class="card-intro">
-                    The JavaScript runtime is single-threaded and contains a execution stack called the <strong>Call Stack</strong>. 
-                    Every function call creates a stack frame containing primitive local variables, arguments, and return address pointers.
+                    How dual-microphone inverse phase cancellation blocks background office noise and improves developer focus during long coding sessions.
                 </p>
-
-                <div style="background: var(--accent-rose-soft); border-left: 4px solid var(--accent-rose); padding: 1rem; border-radius: 8px; font-size: 0.88rem; color: #9f1239;">
-                    <strong>Understanding Stack Overflow:</strong> If a recursive function fails to hit its base case, stack frames keep pushing until memory limit is exceeded, triggering <code>RangeError: Maximum call stack size exceeded</code>.
-                </div>
             </div>
 
             <!-- Quick Navigation Card -->
             <div class="content-card">
                 <div class="quick-nav-card">
-                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-header">Continue Store Trajectory (PUSH)</div>
                     <div class="quick-nav-links">
                         <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog">Catalog <span>→</span></a>
+                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail">Detail <span>→</span></a>
+                        <a href="cart.html" class="quick-nav-link" data-page="Cart">Cart 🛒 <span>→</span></a>
                         <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
                         <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
-                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
-                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
-                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Showroom">Showroom <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Support">Support <span>→</span></a>
                         <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
                     </div>
                 </div>
@@ -109,7 +90,7 @@
 
         </section>
 
-        <!-- Right Column: Visual Stack -->
+        <!-- Sidebar Column: Stack Visualizer -->
         <aside class="sidebar-column">
             <div class="sidebar-stack-wrapper">
                 <div class="stack-card">
@@ -151,9 +132,9 @@
     </main>
 
     <footer class="site-footer">
-        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+        <p>StackMart Store &bull; Page History Stack Demonstration (LIFO Engine)</p>
     </footer>
 
-    <script src="js/stack.js?v=4.0"></script>
+    <script src="js/stack.js?v=5.0"></script>
 </body>
 </html>

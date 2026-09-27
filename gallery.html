@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gallery - Page Stack History Demo</title>
-    <link rel="stylesheet" href="css/style.css?v=4.0">
-
-    
-
+    <title>Showroom Gallery - StackMart Store</title>
+    <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
@@ -15,32 +12,32 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo" data-page="Home">
-                <div class="brand-icon">🥞</div>
-                <span>PageStack</span>
+                <div class="brand-icon">🛒</div>
+                <span>StackMart</span>
                 <span class="brand-badge">LIFO Engine</span>
             </a>
-            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
+                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
                     <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
-                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
-                    <li><a href="gallery.html" class="nav-link active" data-page="Gallery">Gallery</a></li>
+                    <li><a href="gallery.html" class="nav-link active" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Support">Support</a></li>
                     <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Header -->
+    <!-- Hero Banner -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>🖼️</span> Visual Flowcharts & Diagrams</h1>
-                <p class="hero-subtitle">Step-by-Step Architectural Diagrams of Stack Operations & Call Memory</p>
+                <h1><span>🖼️</span> Product Showroom & Unboxing Gallery</h1>
+                <p class="hero-subtitle">High-Resolution Photos, Studio Shots & Device Teardowns</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -55,52 +52,23 @@
         <section class="content-column">
             
             <div class="content-card">
-                <h2 class="card-heading"><span>📊</span> PUSH & POP Operation Diagrams</h2>
+                <h2 class="card-heading"><span>📷</span> Hardware Studio Gallery</h2>
                 <p class="card-intro">
-                    Visualizing how pointer modifications occur at runtime when navigating forward or backward.
+                    Explore high-resolution media showcasing the build quality and craftsmanship of StackMart hardware:
                 </p>
 
-                <!-- Diagram 1: PUSH -->
-                <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 0.8rem;">1. PUSH Operation Flow (Forward Navigation)</h3>
-                    <div style="font-family: var(--font-code); font-size: 0.85rem; line-height: 1.8; color: #1e293b;">
-                        [ Initial Stack ] &nbsp;&nbsp;&rightarrow;&nbsp;&nbsp; top &rarr; [ Services ] &rarr; [ About ] &rarr; [ Home ]<br>
-                        [ User Clicks Gallery ] &rarr;&nbsp; <strong style="color: #10b981;">PUSH("Gallery")</strong><br>
-                        [ Updated Stack ] &nbsp;&nbsp;&rightarrow;&nbsp;&nbsp; <strong style="color: #10b981;">top &rarr; [ Gallery ] (NEW TOP)</strong> &rarr; [ Services ] &rarr; [ About ] &rarr; [ Home ]
+                <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+                    <div style="background: var(--pastel-purple); padding: 2rem; border-radius: 12px; text-align: center; color: var(--pastel-purple-text); font-weight: bold;">
+                        💻 ProBook Ultra
                     </div>
-                </div>
-
-                <!-- Diagram 2: POP -->
-                <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; color: var(--accent-rose); margin-bottom: 0.8rem;">2. POP Operation Flow (Back Button)</h3>
-                    <div style="font-family: var(--font-code); font-size: 0.85rem; line-height: 1.8; color: #1e293b;">
-                        [ Current Stack ] &nbsp;&nbsp;&rightarrow;&nbsp;&nbsp; top &rarr; [ Gallery ] &rarr; [ Services ] &rarr; [ About ] &rarr; [ Home ]<br>
-                        [ User Clicks Back ] &rarr;&nbsp; <strong style="color: var(--accent-rose);">POP() &rarr; Returns "Gallery"</strong><br>
-                        [ New Top Peek ] &nbsp;&nbsp;&rightarrow;&nbsp;&nbsp; <strong style="color: #4f46e5;">top &rarr; [ Services ] (NEW TOP)</strong> &rarr; [ About ] &rarr; [ Home ]<br>
-                        [ Action ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rightarrow;&nbsp;&nbsp; Navigate browser to window.location.href = "services.html"
+                    <div style="background: var(--pastel-blue); padding: 2rem; border-radius: 12px; text-align: center; color: var(--pastel-blue-text); font-weight: bold;">
+                        🎧 NoiseCancel Pro
                     </div>
-                </div>
-            </div>
-
-            <!-- Call Stack vs Data Stack Diagram -->
-            <div class="content-card">
-                <h2 class="card-heading"><span>🧬</span> Call Stack Memory Frame Diagram</h2>
-                <p class="card-intro">
-                    In JavaScript V8 engine runtime, execution context is also managed via an internal Call Stack:
-                </p>
-
-                <div class="feature-grid">
-                    <div class="feature-box" style="border-left: 4px solid var(--primary);">
-                        <div class="feature-title">Top Frame: navigateBack()</div>
-                        <div class="feature-desc">Active execution context. Local vars: poppedPage, newTopPage.</div>
+                    <div style="background: var(--pastel-peach); padding: 2rem; border-radius: 12px; text-align: center; color: var(--pastel-peach-text); font-weight: bold;">
+                        ⌚ UltraFit Watch
                     </div>
-                    <div class="feature-box" style="border-left: 4px solid var(--accent-cyan);">
-                        <div class="feature-title">Middle Frame: pageStack.pop()</div>
-                        <div class="feature-desc">Method context. Mutates internal this.items[] array.</div>
-                    </div>
-                    <div class="feature-box" style="border-left: 4px solid var(--top-accent);">
-                        <div class="feature-title">Base Frame: Global Event Loop</div>
-                        <div class="feature-desc">DOMContentLoaded & Click event listener context.</div>
+                    <div style="background: var(--top-soft); padding: 2rem; border-radius: 12px; text-align: center; color: var(--top-text); font-weight: bold;">
+                        ⌨️ KeyPro RGB
                     </div>
                 </div>
             </div>
@@ -108,14 +76,16 @@
             <!-- Quick Navigation Card -->
             <div class="content-card">
                 <div class="quick-nav-card">
-                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-header">Continue Store Trajectory (PUSH)</div>
                     <div class="quick-nav-links">
                         <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog">Catalog <span>→</span></a>
+                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail">Detail <span>→</span></a>
+                        <a href="cart.html" class="quick-nav-link" data-page="Cart">Cart 🛒 <span>→</span></a>
                         <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
                         <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
-                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
                         <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
-                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Support">Support <span>→</span></a>
                         <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
                     </div>
                 </div>
@@ -123,7 +93,7 @@
 
         </section>
 
-        <!-- Right Column: Visual Stack -->
+        <!-- Sidebar Column: Stack Visualizer -->
         <aside class="sidebar-column">
             <div class="sidebar-stack-wrapper">
                 <div class="stack-card">
@@ -156,7 +126,7 @@
                     <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
                     <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
                     <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
-                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Gallery"</span></div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Showroom"</span></div>
                     <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
                 </div>
             </div>
@@ -165,9 +135,9 @@
     </main>
 
     <footer class="site-footer">
-        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+        <p>StackMart Store &bull; Page History Stack Demonstration (LIFO Engine)</p>
     </footer>
 
-    <script src="js/stack.js?v=4.0"></script>
+    <script src="js/stack.js?v=5.0"></script>
 </body>
 </html>

@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Services - Page Stack History Demo</title>
-    <link rel="stylesheet" href="css/style.css?v=4.0">
-
-    
-
+    <title>Store Services - StackMart Store</title>
+    <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
@@ -15,32 +12,32 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo" data-page="Home">
-                <div class="brand-icon">🥞</div>
-                <span>PageStack</span>
+                <div class="brand-icon">🛒</div>
+                <span>StackMart</span>
                 <span class="brand-badge">LIFO Engine</span>
             </a>
-            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
+                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
                     <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link active" data-page="Services">Services</a></li>
-                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
-                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Support">Support</a></li>
                     <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Header -->
+    <!-- Hero Banner -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>⚙️</span> Educational Services & Tools</h1>
-                <p class="hero-subtitle">Interactive Data Structure Simulation, Profiling & Analysis Suite</p>
+                <h1><span>⚙️</span> Customer Services & Guarantees</h1>
+                <p class="hero-subtitle">Extended Warranty, Trade-In Calculator & Express Logistics</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -55,69 +52,48 @@
         <section class="content-column">
             
             <div class="content-card">
-                <h2 class="card-heading"><span>🛠️</span> Core Educational Services Provided</h2>
+                <h2 class="card-heading"><span>🛠️</span> Premium Customer Services</h2>
                 <p class="card-intro">
-                    Our platform provides real-time data structure inspection tools designed for computer science 
-                    students and developers learning fundamental memory models and algorithm dynamics.
+                    We stand by every product we ship with industry-leading coverage and instant tech support.
                 </p>
 
                 <div class="feature-grid">
                     <div class="feature-box">
-                        <div class="feature-icon">🖥️</div>
-                        <div class="feature-title">Live Stack Visualizer</div>
-                        <div class="feature-desc">Real-time render of stack frames showing memory addresses, indexes, and top pointers.</div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">📈</div>
-                        <div class="feature-title">Complexity Profiler</div>
-                        <div class="feature-desc">Benchmarking engine measuring time and space allocation across PUSH and POP operations.</div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">💾</div>
-                        <div class="feature-title">State Persistence</div>
-                        <div class="feature-desc">HTML5 LocalStorage synchronization keeping data structures alive across page reloads.</div>
-                    </div>
-                    <div class="feature-box">
                         <div class="feature-icon">🛡️</div>
-                        <div class="feature-title">Boundary Safety</div>
-                        <div class="feature-desc">Underflow and overflow guards protecting applications from invalid pop actions.</div>
+                        <div class="feature-title">2-Year Warranty</div>
+                        <div class="feature-desc">Comprehensive repair and replacement guarantee on all laptops and electronics.</div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Service API Spec -->
-            <div class="content-card">
-                <h2 class="card-heading"><span>💻</span> Service Interface Specifications</h2>
-                <p class="card-intro">
-                    Every service exposes clean JavaScript APIs for integration into web applications:
-                </p>
-
-                <div class="code-block">
-<span class="code-comment">// Service API initialization snippet</span>
-<span class="code-keyword">const</span> serviceEngine = <span class="code-keyword">new</span> <span class="code-func">DSAServiceEngine</span>({
-    structure: <span class="code-string">'PageStack'</span>,
-    persistence: <span class="code-string">'localStorage'</span>,
-    maxDepth: 100
-});
-
-<span class="code-comment">// Subscribe to real-time PUSH/POP events</span>
-serviceEngine.<span class="code-func">onStackChange</span>((event) => {
-    console.<span class="code-func">log</span>(<span class="code-string">`[${event.type}] Stack size: ${event.size}`</span>);
-});
+                    <div class="feature-box">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-title">30-Day Easy Returns</div>
+                        <div class="feature-desc">No-questions-asked full refund window with pre-paid return shipping labels.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">♻️</div>
+                        <div class="feature-title">Trade-In Program</div>
+                        <div class="feature-desc">Trade in your old device for instant credit towards new ProBook laptops.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🎧</div>
+                        <div class="feature-title">24/7 Tech Support</div>
+                        <div class="feature-desc">Direct access to certified hardware engineers for troubleshooting and setup.</div>
+                    </div>
                 </div>
             </div>
 
             <!-- Quick Navigation Card -->
             <div class="content-card">
                 <div class="quick-nav-card">
-                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-header">Continue Store Trajectory (PUSH)</div>
                     <div class="quick-nav-links">
                         <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog">Catalog <span>→</span></a>
+                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail">Detail <span>→</span></a>
+                        <a href="cart.html" class="quick-nav-link" data-page="Cart">Cart 🛒 <span>→</span></a>
                         <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
-                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
-                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Showroom">Showroom <span>→</span></a>
                         <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
-                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Support">Support <span>→</span></a>
                         <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
                     </div>
                 </div>
@@ -125,7 +101,7 @@ serviceEngine.<span class="code-func">onStackChange</span>((event) => {
 
         </section>
 
-        <!-- Right Column: Visual Stack -->
+        <!-- Sidebar Column: Stack Visualizer -->
         <aside class="sidebar-column">
             <div class="sidebar-stack-wrapper">
                 <div class="stack-card">
@@ -167,9 +143,9 @@ serviceEngine.<span class="code-func">onStackChange</span>((event) => {
     </main>
 
     <footer class="site-footer">
-        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+        <p>StackMart Store &bull; Page History Stack Demonstration (LIFO Engine)</p>
     </footer>
 
-    <script src="js/stack.js?v=4.0"></script>
+    <script src="js/stack.js?v=5.0"></script>
 </body>
 </html>

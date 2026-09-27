@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About Us - StackMart Store</title>
+    <title>Shopping Cart - StackMart Store</title>
     <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
@@ -20,8 +20,8 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
                     <li><a href="products.html" class="nav-link" data-page="Catalog">Catalog</a></li>
-                    <li><a href="cart.html" class="nav-link" data-page="Cart">Cart 🛒</a></li>
-                    <li><a href="about.html" class="nav-link active" data-page="About">About</a></li>
+                    <li><a href="cart.html" class="nav-link active" data-page="Cart">Cart 🛒</a></li>
+                    <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
                     <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
                     <li><a href="gallery.html" class="nav-link" data-page="Showroom">Showroom</a></li>
                     <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
@@ -36,8 +36,8 @@
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-title-group">
-                <h1><span>ℹ️</span> About StackMart & Logistics</h1>
-                <p class="hero-subtitle">Our Mission, Global Fulfillment Centers & Tech Architecture</p>
+                <h1><span>🛍️</span> Your Shopping Cart</h1>
+                <p class="hero-subtitle">Review Order Items, Discounts & Checkout Summary</p>
             </div>
             <div class="control-actions">
                 <button class="btn btn-back">← Back (POP)</button>
@@ -52,31 +52,72 @@
         <section class="content-column">
             
             <div class="content-card">
-                <h2 class="card-heading"><span>🏢</span> Global Supply Chain & Network</h2>
-                <p class="card-intro">
-                    Founded in 2024, <strong>StackMart</strong> serves over 10 Million customers across 45 countries with ultra-fast 24-hour delivery on authentic laptops, gaming rigs, and audio equipment.
-                </p>
+                <h2 class="card-heading"><span>📦</span> Cart Items Summary (2 Items)</h2>
+                
+                <div class="ds-table-wrapper">
+                    <table class="ds-table">
+                        <thead>
+                            <tr>
+                                <th>Product Item</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                        <span style="font-size: 1.5rem;">💻</span>
+                                        <div>
+                                            <strong>ProBook Ultra 15" M3 Max</strong>
+                                            <div style="font-size: 0.78rem; color: var(--text-muted);">1TB SSD / 36GB RAM</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>1</td>
+                                <td>$1,899.00</td>
+                                <td><strong>$1,899.00</strong></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                        <span style="font-size: 1.5rem;">🎧</span>
+                                        <div>
+                                            <strong>NoiseCancel Pro Wireless</strong>
+                                            <div style="font-size: 0.78rem; color: var(--text-muted);">Active ANC / 40h Battery</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>1</td>
+                                <td>$299.00</td>
+                                <td><strong>$299.00</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <div class="feature-grid">
-                    <div class="feature-box">
-                        <div class="feature-icon">🚀</div>
-                        <div class="feature-title">24-Hour Shipping</div>
-                        <div class="feature-desc">Automated robotic sorting centers processing 500,000 packages daily.</div>
+                <!-- Order Calculations Card -->
+                <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; margin-top: 1.25rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <span>Subtotal</span>
+                        <span>$2,198.00</span>
                     </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">🛡️</div>
-                        <div class="feature-title">100% Authentic</div>
-                        <div class="feature-desc">Direct OEM manufacturer partnerships guaranteeing genuine warranties.</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <span>Express Shipping</span>
+                        <span style="color: var(--top-text); font-weight: bold;">FREE</span>
                     </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">🌍</div>
-                        <div class="feature-title">45+ Countries</div>
-                        <div class="feature-desc">Global fulfillment hubs in San Francisco, London, Tokyo, and Singapore.</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <span>Estimated Tax (8%)</span>
+                        <span>$175.84</span>
                     </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">⚡</div>
-                        <div class="feature-title">Stack Powered</div>
-                        <div class="feature-desc">Custom array-backed LIFO page history engine for zero navigation friction.</div>
+                    <div style="display: flex; justify-content: space-between; border-top: 2px dashed var(--border-color); padding-top: 0.75rem; font-size: 1.2rem; font-weight: 800; color: var(--primary);">
+                        <span>Order Total</span>
+                        <span>$2,373.84</span>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <a href="profile.html" class="btn btn-back" data-page="Profile" style="padding: 0.75rem 1.5rem;">💳 Proceed to Checkout (PUSH)</a>
+                        <a href="products.html" class="quick-nav-link" data-page="Catalog" style="padding: 0.75rem 1rem;">← Continue Shopping</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +130,7 @@
                         <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
                         <a href="products.html" class="quick-nav-link" data-page="Catalog">Catalog <span>→</span></a>
                         <a href="product-detail.html" class="quick-nav-link" data-page="Detail">Detail <span>→</span></a>
-                        <a href="cart.html" class="quick-nav-link" data-page="Cart">Cart 🛒 <span>→</span></a>
+                        <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
                         <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
                         <a href="gallery.html" class="quick-nav-link" data-page="Showroom">Showroom <span>→</span></a>
                         <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
@@ -134,7 +175,7 @@
                     <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
                     <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
                     <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
-                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"About"</span></div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Cart"</span></div>
                     <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
                 </div>
             </div>
