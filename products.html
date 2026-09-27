@@ -52,44 +52,161 @@
         <section class="content-column">
             
             <div class="content-card">
-                <h2 class="card-heading"><span>📦</span> Featured Tech Products Grid</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <h2 class="card-heading" style="margin-bottom: 0;"><span>📦</span> Electronics & Gadgets Catalog</h2>
+                    <div class="amazon-search-bar" style="max-width: 320px;">
+                        <select class="amazon-search-select">
+                            <option>All</option>
+                            <option>Audio</option>
+                            <option>Laptops</option>
+                            <option>Wearables</option>
+                        </select>
+                        <input type="text" class="amazon-search-input" placeholder="Search StackMart...">
+                        <button class="amazon-search-btn">🔍</button>
+                    </div>
+                </div>
                 
-                <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));">
+                <div class="feature-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;">
                     
-                    <!-- Product 1 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">💻</div>
-                        <div class="feature-title">ProBook Ultra 15"</div>
-                        <div style="font-size: 0.8rem; color: #f59e0b; margin-bottom: 0.3rem;">⭐⭐⭐⭐⭐ (4.9/5)</div>
-                        <div style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem;">$1,899.00</div>
-                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail" style="justify-content: center; background: var(--primary); color: #fff;">View Product (PUSH)</a>
+                    <!-- Product 1: Headphones -->
+                    <div class="amazon-card">
+                        <span class="best-seller-tag">Best Seller</span>
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="NoiseCancel Pro Wireless Headphones">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">NoiseCancel Pro Wireless Over-Ear Headphones with Active ANC</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★★</span>
+                                <span class="rating-count">4.9 (3,820)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">299</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$399.00</span>
+                                <span class="save-percent">-25%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE One-Day Delivery</strong> Tomorrow
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
                     </div>
 
-                    <!-- Product 2 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">🎧</div>
-                        <div class="feature-title">NoiseCancel Pro</div>
-                        <div style="font-size: 0.8rem; color: #f59e0b; margin-bottom: 0.3rem;">⭐⭐⭐⭐⭐ (4.8/5)</div>
-                        <div style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem;">$299.00</div>
-                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail" style="justify-content: center;">View Product (PUSH)</a>
+                    <!-- Product 2: ProBook Laptop -->
+                    <div class="amazon-card">
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="ProBook Ultra 15 M3 Laptop">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">ProBook Ultra 15" Liquid Retina Display, 32GB RAM, 1TB SSD</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★★</span>
+                                <span class="rating-count">4.9 (1,420)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">1,899</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$2,199.00</span>
+                                <span class="save-percent">-14%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE Express Delivery</strong> by 10 AM
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
                     </div>
 
-                    <!-- Product 3 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">⌚</div>
-                        <div class="feature-title">UltraFit Watch 2</div>
-                        <div style="font-size: 0.8rem; color: #f59e0b; margin-bottom: 0.3rem;">⭐⭐⭐⭐☆ (4.7/5)</div>
-                        <div style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem;">$399.00</div>
-                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail" style="justify-content: center;">View Product (PUSH)</a>
+                    <!-- Product 3: Smartwatch -->
+                    <div class="amazon-card">
+                        <span class="best-seller-tag" style="background: #2563eb;">#1 Choice</span>
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="UltraFit Watch 2 Fitness Smartwatch">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">UltraFit Smartwatch 2 with ECG, Sleep Trajectory & Titanium Case</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★☆</span>
+                                <span class="rating-count">4.7 (2,190)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">399</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$449.00</span>
+                                <span class="save-percent">-11%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE Two-Day Shipping</strong>
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
                     </div>
 
-                    <!-- Product 4 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">⌨️</div>
-                        <div class="feature-title">KeyPro RGB Wireless</div>
-                        <div style="font-size: 0.8rem; color: #f59e0b; margin-bottom: 0.3rem;">⭐⭐⭐⭐⭐ (4.9/5)</div>
-                        <div style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem;">$149.00</div>
-                        <a href="product-detail.html" class="quick-nav-link" data-page="Detail" style="justify-content: center;">View Product (PUSH)</a>
+                    <!-- Product 4: Retro Vintage Camera -->
+                    <div class="amazon-card">
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&q=80" alt="CineCam 4K Mirrorless Digital Camera">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">CineCam 4K Vintage Mirrorless Digital Camera with 35mm Prime Lens</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★★</span>
+                                <span class="rating-count">4.8 (890)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">849</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$999.00</span>
+                                <span class="save-percent">-15%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE Express Shipping</strong>
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: Mechanical Keyboard -->
+                    <div class="amazon-card">
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80" alt="KeyPro RGB Mechanical Keyboard">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">KeyPro Wireless RGB Mechanical Keyboard with Hot-Swappable Switches</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★★</span>
+                                <span class="rating-count">4.9 (4,120)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">149</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$179.00</span>
+                                <span class="save-percent">-17%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE Same-Day Delivery</strong>
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: Wireless Earbuds -->
+                    <div class="amazon-card">
+                        <span class="best-seller-tag">Deal of Day</span>
+                        <div class="amazon-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80" alt="AirStudio True Wireless Earbuds">
+                        </div>
+                        <div class="amazon-card-body">
+                            <div class="amazon-product-title">AirStudio True Wireless Earbuds with Spatial Audio & Wireless Case</div>
+                            <div class="amazon-rating-row">
+                                <span>★★★★★</span>
+                                <span class="rating-count">4.8 (6,530)</span>
+                            </div>
+                            <div class="amazon-price-block">
+                                <span class="price-symbol">$</span><span class="price-main">189</span><span style="font-size: 0.8rem; font-weight: 700;">.00</span>
+                                <span class="price-original">$249.00</span>
+                                <span class="save-percent">-24%</span>
+                            </div>
+                            <div class="delivery-text">
+                                <span class="prime-badge">prime</span> <strong>FREE One-Day Delivery</strong>
+                            </div>
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail">View Product Details (PUSH)</a>
+                        </div>
                     </div>
 
                 </div>

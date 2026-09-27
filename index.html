@@ -51,52 +51,98 @@
         
         <section class="content-column">
             
-            <!-- Featured Store Banner -->
-            <div class="content-card" style="background: linear-gradient(135deg, var(--primary-soft) 0%, #ffffff 100%);">
-                <span style="background: var(--primary); color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">🔥 Flash Sale &bull; 25% OFF</span>
-                <h2 style="font-size: 1.6rem; font-weight: 800; margin: 0.6rem 0 0.4rem 0; color: var(--text-primary);">ProBook Ultra 15" M3 Max Workstation</h2>
-                <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-                    The ultimate laptop for software engineers and creators. 36GB RAM, 1TB SSD, 120Hz Liquid Retina Display.
-                </p>
-                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                    <a href="product-detail.html" class="btn btn-back" data-page="Detail">💻 View Details & Specs (PUSH)</a>
-                    <a href="products.html" class="quick-nav-link" data-page="Catalog">📱 Browse Full Catalog</a>
+            <!-- Featured Amazon-Style Top Search & Banner -->
+            <div class="content-card" style="padding: 1.25rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">Shop Today's Best Tech Deals</div>
+                    <div class="amazon-search-bar">
+                        <select class="amazon-search-select">
+                            <option>All Electronics</option>
+                            <option>Audio</option>
+                            <option>Laptops</option>
+                            <option>Cameras</option>
+                        </select>
+                        <input type="text" class="amazon-search-input" placeholder="Search products, brands and deals...">
+                        <button class="amazon-search-btn">🔍</button>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; align-items: center; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #dbeafe;">
+                    <div>
+                        <span style="background: #ef4444; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">🔥 Flash Deal &bull; 25% OFF</span>
+                        <h2 style="font-size: 1.6rem; font-weight: 800; margin: 0.6rem 0 0.3rem 0; color: var(--text-primary);">ProBook Ultra 15" M3 Max Workstation</h2>
+                        <div class="amazon-rating-row" style="margin-bottom: 0.6rem;">
+                            <span>★★★★★</span>
+                            <span class="rating-count">4.9 (1,420 ratings) &bull; <span class="prime-badge">prime</span></span>
+                        </div>
+                        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.5;">
+                            The ultimate laptop for software engineers and creators. 36GB RAM, 1TB SSD, 120Hz Liquid Retina Display.
+                        </p>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <a href="product-detail.html" class="btn-add-amazon quick-nav-link" data-page="Detail" style="padding: 0.65rem 1.25rem; font-size: 0.9rem;">💻 View Product & Specs (PUSH)</a>
+                            <a href="products.html" class="quick-nav-link" data-page="Catalog" style="padding: 0.65rem 1rem;">📱 Browse Catalog</a>
+                        </div>
+                    </div>
+                    <div style="text-align: center; height: 220px; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));" alt="ProBook Ultra Laptop">
+                    </div>
                 </div>
             </div>
 
-            <!-- Store Product Categories -->
+            <!-- Store Amazon Product Categories Grid -->
             <div class="content-card">
-                <h2 class="card-heading"><span>📦</span> Top Electronics Categories</h2>
+                <h2 class="card-heading"><span>📦</span> Popular E-Commerce Categories</h2>
                 
-                <div class="feature-grid">
-                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
-                        <div class="feature-box">
-                            <div class="feature-icon">💻</div>
-                            <div class="feature-title">Laptops & PCs</div>
-                            <div class="feature-desc">Workstations, ultrabooks, and high-performance gaming rigs.</div>
+                <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;" class="quick-nav-link">
+                        <div class="amazon-card" style="height: 100%;">
+                            <div class="amazon-img-wrapper" style="height: 140px;">
+                                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" alt="Laptops">
+                            </div>
+                            <div class="amazon-card-body" style="padding: 0.75rem; text-align: center;">
+                                <div class="amazon-product-title" style="margin-bottom: 2px;">Laptops & Workstations</div>
+                                <span style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">Explore Models →</span>
+                            </div>
                         </div>
                     </a>
-                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
-                        <div class="feature-box">
-                            <div class="feature-icon">🎧</div>
-                            <div class="feature-title">Audio & Headphones</div>
-                            <div class="feature-desc">Wireless ANC headphones, studio monitors, and earbuds.</div>
+
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;" class="quick-nav-link">
+                        <div class="amazon-card" style="height: 100%;">
+                            <div class="amazon-img-wrapper" style="height: 140px;">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" alt="Headphones">
+                            </div>
+                            <div class="amazon-card-body" style="padding: 0.75rem; text-align: center;">
+                                <div class="amazon-product-title" style="margin-bottom: 2px;">Audio & Wireless ANC</div>
+                                <span style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">Explore Audio →</span>
+                            </div>
                         </div>
                     </a>
-                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
-                        <div class="feature-box">
-                            <div class="feature-icon">⌚</div>
-                            <div class="feature-title">Smart Wearables</div>
-                            <div class="feature-desc">Fitness trackers, smartwatches, and health monitors.</div>
+
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;" class="quick-nav-link">
+                        <div class="amazon-card" style="height: 100%;">
+                            <div class="amazon-img-wrapper" style="height: 140px;">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" alt="Smartwatches">
+                            </div>
+                            <div class="amazon-card-body" style="padding: 0.75rem; text-align: center;">
+                                <div class="amazon-product-title" style="margin-bottom: 2px;">Smart Wearables</div>
+                                <span style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">Explore Watches →</span>
+                            </div>
                         </div>
                     </a>
-                    <a href="products.html" data-page="Catalog" style="text-decoration: none;">
-                        <div class="feature-box">
-                            <div class="feature-icon">⌨️</div>
-                            <div class="feature-title">Accessories</div>
-                            <div class="feature-desc">Mechanical keyboards, ergonomic mice, and 4K displays.</div>
+
+                    <a href="products.html" data-page="Catalog" style="text-decoration: none;" class="quick-nav-link">
+                        <div class="amazon-card" style="height: 100%;">
+                            <div class="amazon-img-wrapper" style="height: 140px;">
+                                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&q=80" alt="Keyboards">
+                            </div>
+                            <div class="amazon-card-body" style="padding: 0.75rem; text-align: center;">
+                                <div class="amazon-product-title" style="margin-bottom: 2px;">Keyboards & Accessories</div>
+                                <span style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">Explore Gear →</span>
+                            </div>
                         </div>
                     </a>
+
                 </div>
             </div>
 

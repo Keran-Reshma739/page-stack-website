@@ -52,22 +52,72 @@
         <section class="content-column">
             
             <div class="content-card">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; align-items: center;">
-                    <div style="background: #f1f5f9; border-radius: 16px; padding: 2.5rem; text-align: center; font-size: 4rem;">
-                        💻
-                    </div>
-                    <div>
-                        <span style="background: var(--top-soft); color: var(--top-text); font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">In Stock &bull; Free Shipping</span>
-                        <h2 style="font-size: 1.6rem; font-weight: 800; margin: 0.5rem 0 0.3rem 0; color: var(--text-primary);">ProBook Ultra 15" M3 Max</h2>
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.8rem;">$1,899.00 <span style="font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through;">$2,199.00</span></div>
-                        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
-                            Engineered with a 16-core CPU, 40-core GPU, 36GB Unified Memory, and 1TB PCIe Gen4 SSD. Built for extreme compilation speed, deep neural training, and mobile performance.
-                        </p>
-                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                            <a href="cart.html" class="btn btn-back" data-page="Cart" style="padding: 0.75rem 1.5rem;">🛍️ Add to Cart & Checkout (PUSH)</a>
-                            <a href="products.html" class="quick-nav-link" data-page="Catalog" style="padding: 0.75rem 1rem;">← Back to Catalog</a>
+                <div class="product-detail-grid">
+                    
+                    <!-- Left: Gallery & Main Image -->
+                    <div class="detail-gallery">
+                        <div class="thumb-column">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" class="thumb-img active" alt="Laptop angle 1">
+                            <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=300&q=80" class="thumb-img" alt="Laptop angle 2">
+                            <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=300&q=80" class="thumb-img" alt="Laptop angle 3">
+                        </div>
+                        <div class="main-image-box">
+                            <img id="main-product-img" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80" alt="ProBook Ultra 15">
                         </div>
                     </div>
+
+                    <!-- Middle: Amazon Details & Specs Bullets -->
+                    <div>
+                        <span class="best-seller-tag" style="position: static; display: inline-block; margin-bottom: 0.5rem;">#1 Best Seller in Laptops</span>
+                        <h1 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); line-height: 1.35; margin-bottom: 0.4rem;">
+                            ProBook Ultra 15" M3 Max Workstation (36GB RAM, 1TB NVMe SSD, Liquid Retina XDR)
+                        </h1>
+                        <div style="font-size: 0.85rem; color: #f59e0b; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span>★★★★★ 4.9</span>
+                            <a href="#reviews" style="color: #2563eb; text-decoration: none;">(1,420 rating reviews)</a>
+                            <span style="color: var(--text-muted);">| 500+ bought in past month</span>
+                        </div>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 0.85rem 0; margin-bottom: 1rem;">
+                            <div class="amazon-price-block" style="margin-bottom: 0.25rem;">
+                                <span style="font-size: 0.9rem; font-weight: 700; color: #dc2626;">-14%</span>
+                                <span class="price-symbol" style="font-size: 1.1rem;">$</span><span class="price-main" style="font-size: 1.8rem;">1,899</span><span style="font-size: 1.1rem; font-weight: 800;">.00</span>
+                            </div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">List Price: <span style="text-decoration: line-through;">$2,199.00</span></div>
+                            <div style="font-size: 0.8rem; color: #059669; font-weight: 700; margin-top: 0.25rem;">✓ Saved $300.00 at Checkout</div>
+                        </div>
+
+                        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+                            <h4 style="font-weight: 800; color: var(--text-primary); margin-bottom: 0.4rem;">About this item:</h4>
+                            <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; line-height: 1.45;">
+                                <li><strong>M3 Max Chip:</strong> 16-core CPU and 40-core GPU for rendering, 3D modeling, and compilation.</li>
+                                <li><strong>36GB Unified Memory:</strong> Fluid multitasking across virtual machines and IDEs.</li>
+                                <li><strong>XDR Display:</strong> 16.2" Liquid Retina XDR with 1,600 nits peak brightness and 120Hz ProMotion.</li>
+                                <li><strong>Battery Life:</strong> Up to 22 hours of continuous web browsing on a single charge.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right: Amazon Buy Box -->
+                    <div class="amazon-buybox">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">$1,899.00</div>
+                        <div class="delivery-text" style="margin-bottom: 0;">
+                            <span class="prime-badge">prime</span> <strong>FREE One-Day Delivery</strong> Tomorrow by 10 PM. Order within 4 hrs 12 mins.
+                        </div>
+                        <div class="stock-status-green">In Stock</div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.35rem;">
+                            <a href="cart.html" class="btn-add-amazon quick-nav-link" data-page="Cart" style="padding: 0.65rem;">🛒 Add to Cart (PUSH)</a>
+                            <a href="cart.html" class="btn-add-amazon btn-buy-now quick-nav-link" data-page="Cart" style="padding: 0.65rem;">⚡ Buy Now</a>
+                        </div>
+
+                        <div class="ships-box-meta">
+                            <div class="ships-row"><span>Ships from</span> <strong>StackMart Global</strong></div>
+                            <div class="ships-row"><span>Sold by</span> <strong>StackMart Direct</strong></div>
+                            <div class="ships-row"><span>Returns</span> <strong style="color: #2563eb;">30-day FREE Return</strong></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
