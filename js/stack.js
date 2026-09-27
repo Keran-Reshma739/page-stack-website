@@ -1,5 +1,5 @@
 /**
- * PageStack Class - Professional Implementation
+ * PageStack Class - Professional Mobile-First Implementation
  * Manages browser/page navigation history with LIFO (Last In, First Out) principle,
  * operation metrics tracking, memory simulation, and localStorage persistence.
  */
@@ -50,7 +50,7 @@ class PageStack {
     logEvent(action, pageName) {
         const timestamp = new Date().toLocaleTimeString();
         this.metrics.logs.unshift({ action, pageName, timestamp });
-        if (this.metrics.logs.length > 20) this.metrics.logs.pop(); // Keep last 20 logs
+        if (this.metrics.logs.length > 20) this.metrics.logs.pop();
         this.saveMetrics();
     }
 
@@ -146,7 +146,7 @@ function getCurrentPageFilename() {
 
 function initPageStack() {
     const currentFilename = getCurrentPageFilename();
-    const meta = PAGE_META[currentFilename] || { name: 'Home', icon: '📄' };
+    const meta = PAGE_META[currentFilename] || { name: 'Home', icon: '🏠' };
     const currentPageObj = { name: meta.name, url: currentFilename, icon: meta.icon };
 
     if (pageStack.isEmpty()) {
@@ -259,14 +259,13 @@ function renderStackUI() {
                 if (isTop) itemClass += ' top-item';
                 if (isBottom) itemClass += ' bottom-item';
 
-                // Virtual memory hex address simulation for CS realism
                 const memAddress = '0x' + (0x7FFF000 + index * 4).toString(16).toUpperCase();
 
                 html += `
                     <div class="${itemClass}">
                         <div class="stack-item-meta">
                             <span class="mem-addr">${memAddress}</span>
-                            <span class="stack-idx">[ Index ${index} ]</span>
+                            <span class="stack-idx">[Idx ${index}]</span>
                         </div>
                         <div class="stack-item-main">
                             <span class="item-icon">${item.icon || '📄'}</span>
@@ -276,8 +275,8 @@ function renderStackUI() {
                             </div>
                         </div>
                         <div class="stack-item-badges">
-                            ${isTop ? '<span class="badge badge-top">👉 TOP / SP</span>' : ''}
-                            ${isBottom ? '<span class="badge badge-bottom">BASE</span>' : ''}
+                            ${isTop ? '<span class="badge badge-top">👉 TOP</span>' : ''}
+                            ${isBottom && !isTop ? '<span class="badge badge-bottom">BASE</span>' : ''}
                         </div>
                     </div>
                 `;
@@ -320,6 +319,7 @@ function renderStackUI() {
 }
 
 function bindEvents() {
+    // Nav Links
     const links = document.querySelectorAll('a[data-page]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -328,9 +328,14 @@ function bindEvents() {
             const pageName = this.getAttribute('data-page');
             const targetUrl = this.getAttribute('href');
             navigateToPage(pageName, targetUrl);
+            
+            // Close mobile menu if open
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) navMenu.classList.remove('mobile-open');
         });
     });
 
+    // Back buttons
     const backBtns = document.querySelectorAll('.btn-back');
     backBtns.forEach(btn => {
         btn.onclick = function(e) {
@@ -339,6 +344,7 @@ function bindEvents() {
         };
     });
 
+    // Reset button
     const resetBtns = document.querySelectorAll('.btn-reset-stack');
     resetBtns.forEach(btn => {
         btn.onclick = function(e) {
@@ -346,6 +352,16 @@ function bindEvents() {
             resetStack();
         };
     });
+
+    // Mobile Hamburger Menu Toggle
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    if (toggleBtn) {
+        toggleBtn.onclick = function(e) {
+            e.preventDefault();
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) navMenu.classList.toggle('mobile-open');
+        };
+    }
 }
 
 function escapeHtml(str) {
