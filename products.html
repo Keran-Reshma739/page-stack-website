@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Page Stack History Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" data-page="Home">
+                <div class="brand-icon">🥞</div>
+                <span>PageStack</span>
+                <span class="brand-badge">LIFO Engine</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
+                    <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
+                    <li><a href="products.html" class="nav-link active" data-page="Products">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Header -->
+    <section class="page-hero">
+        <div class="hero-container">
+            <div class="hero-title-group">
+                <h1><span>📦</span> Data Structure Library Products</h1>
+                <p class="hero-subtitle">Reusable Abstract Data Types (ADT) Modules for JavaScript & Web Apps</p>
+            </div>
+            <div class="control-actions">
+                <button class="btn btn-back">← Back (POP)</button>
+                <button class="btn btn-reset-stack">Reset Stack</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+        
+        <section class="content-column">
+            
+            <div class="content-card">
+                <h2 class="card-heading"><span>📚</span> Data Structure Component Library</h2>
+                <p class="card-intro">
+                    Explore our modular collection of open-source Data Structure components engineered for web developers.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">🥞</div>
+                        <div class="feature-title">PageStack v2.0</div>
+                        <div class="feature-desc">LIFO Page Navigation Stack with HTML5 LocalStorage persistence and event triggers.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🚶‍♂️🚶‍♀️</div>
+                        <div class="feature-title">Queue FIFO Manager</div>
+                        <div class="feature-desc">First-In, First-Out Queue buffer for print jobs, network packets, and message brokers.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">↔️</div>
+                        <div class="feature-title">Double-Ended Queue (Deque)</div>
+                        <div class="feature-desc">Bidirectional linear collection allowing insertion/deletion at both ends in O(1) time.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">⭐</div>
+                        <div class="feature-title">Priority Queue (Heap)</div>
+                        <div class="feature-desc">Binary heap implementation for priority task scheduling and Dijkstra's algorithm.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Specs Table -->
+            <div class="content-card">
+                <h2 class="card-heading"><span>📋</span> Component Feature Comparison</h2>
+                
+                <div class="ds-table-wrapper">
+                    <table class="ds-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Primary Ordering</th>
+                                <th>Primary Operations</th>
+                                <th>Primary Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>PageStack</strong></td>
+                                <td>LIFO (Last In, First Out)</td>
+                                <td><span class="badge-code">push()</span> / <span class="badge-code">pop()</span></td>
+                                <td>Browser History, Undo/Redo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Queue Engine</strong></td>
+                                <td>FIFO (First In, First Out)</td>
+                                <td><span class="badge-code">enqueue()</span> / <span class="badge-code">dequeue()</span></td>
+                                <td>Task Scheduling, Buffers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deque Engine</strong></td>
+                                <td>Bidirectional Access</td>
+                                <td><span class="badge-code">pushFront()</span> / <span class="badge-code">popBack()</span></td>
+                                <td>Sliding Window Maximum</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Priority Queue</strong></td>
+                                <td>Key Comparison (Heap)</td>
+                                <td><span class="badge-code">insert()</span> / <span class="badge-code">extractMin()</span></td>
+                                <td>A* Search, Operating System Scheduling</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Card -->
+            <div class="content-card">
+                <div class="quick-nav-card">
+                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-links">
+                        <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
+                        <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Visual Stack -->
+        <aside class="sidebar-column">
+            <div class="sidebar-stack-wrapper">
+                <div class="stack-card">
+                    <div class="stack-header">
+                        <div class="stack-title">
+                            <span>🥞 HISTORY STACK</span>
+                        </div>
+                        <span class="stack-counter">Depth: <span id="stack-size-count">0</span></span>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">PUSHES</div>
+                            <div class="stat-val" id="stat-push-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">POPS</div>
+                            <div class="stat-val" id="stat-pop-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">PEAK SIZE</div>
+                            <div class="stat-val" id="stat-peak-count">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stack-viewport" id="visual-stack-container"></div>
+                </div>
+
+                <div class="ds-inspector-card">
+                    <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
+                    <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
+                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Products"</span></div>
+                    <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+    </footer>
+
+    <script src="js/stack.js"></script>
+</body>
+</html>

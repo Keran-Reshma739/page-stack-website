@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Page Stack History Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" data-page="Home">
+                <div class="brand-icon">🥞</div>
+                <span>PageStack</span>
+                <span class="brand-badge">LIFO Engine</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="about.html" class="nav-link active" data-page="About">About</a></li>
+                    <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Header -->
+    <section class="page-hero">
+        <div class="hero-container">
+            <div class="hero-title-group">
+                <h1><span>ℹ️</span> About PageStack Engine</h1>
+                <p class="hero-subtitle">Algorithm Complexity, Data Structure Architecture & Memory Model</p>
+            </div>
+            <div class="control-actions">
+                <button class="btn btn-back">← Back (POP)</button>
+                <button class="btn btn-reset-stack">Reset Stack</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+        
+        <section class="content-column">
+            
+            <div class="content-card">
+                <h2 class="card-heading"><span>🧠</span> Data Structure Architecture</h2>
+                <p class="card-intro">
+                    The <code>PageStack</code> class is an array-backed stack data structure. 
+                    It enforces abstract data type boundaries by only exposing defined operations: 
+                    <code>push()</code>, <code>pop()</code>, <code>peek()</code>, <code>isEmpty()</code>, and <code>display()</code>.
+                </p>
+
+                <div class="code-block">
+<span class="code-keyword">class</span> PageStack {
+    <span class="code-keyword">constructor</span>() {
+        <span class="code-keyword">this</span>.items = <span class="code-keyword">this</span>.<span class="code-func">loadFromLocalStorage</span>() || [];
+    }
+
+    <span class="code-func">push</span>(page) {
+        <span class="code-keyword">this</span>.items.<span class="code-func">push</span>(page); <span class="code-comment">// O(1) Amortized</span>
+        <span class="code-keyword">this</span>.<span class="code-func">saveToLocalStorage</span>();
+    }
+
+    <span class="code-func">pop</span>() {
+        <span class="code-keyword">if</span> (<span class="code-keyword">this</span>.<span class="code-func">isEmpty</span>()) <span class="code-keyword">return</span> <span class="code-string">null</span>;
+        <span class="code-keyword">const</span> popped = <span class="code-keyword">this</span>.items.<span class="code-func">pop</span>(); <span class="code-comment">// O(1)</span>
+        <span class="code-keyword">this</span>.<span class="code-func">saveToLocalStorage</span>();
+        <span class="code-keyword">return</span> popped;
+    }
+
+    <span class="code-func">peek</span>() {
+        <span class="code-keyword">return</span> <span class="code-keyword">this</span>.items[<span class="code-keyword">this</span>.items.length - 1]; <span class="code-comment">// O(1)</span>
+    }
+}
+                </div>
+            </div>
+
+            <!-- Algorithm Complexity Analysis Table -->
+            <div class="content-card">
+                <h2 class="card-heading"><span>📊</span> Time & Space Complexity Analysis</h2>
+                <p class="card-intro">
+                    Because insertion and deletion occur exclusively at the end of the underlying array, 
+                    all core stack operations execute in constant time $O(1)$.
+                </p>
+
+                <div class="ds-table-wrapper">
+                    <table class="ds-table">
+                        <thead>
+                            <tr>
+                                <th>Operation</th>
+                                <th>Method</th>
+                                <th>Time Complexity</th>
+                                <th>Space Complexity</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Push</strong></td>
+                                <td><span class="badge-code">push(page)</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td>Appends element to top of stack</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pop</strong></td>
+                                <td><span class="badge-code">pop()</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td>Removes top element from stack</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Peek</strong></td>
+                                <td><span class="badge-code">peek()</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td>Returns top element without removal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Is Empty</strong></td>
+                                <td><span class="badge-code">isEmpty()</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td><span class="badge-o1">O(1)</span></td>
+                                <td>Checks if stack length equals zero</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Full Stack</strong></td>
+                                <td><span class="badge-code">display()</span></td>
+                                <td><span class="badge-code">O(N)</span></td>
+                                <td><span class="badge-code">O(N)</span></td>
+                                <td>Iterates through all N historical pages</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Card -->
+            <div class="content-card">
+                <div class="quick-nav-card">
+                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-links">
+                        <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Visual Stack -->
+        <aside class="sidebar-column">
+            <div class="sidebar-stack-wrapper">
+                <div class="stack-card">
+                    <div class="stack-header">
+                        <div class="stack-title">
+                            <span>🥞 HISTORY STACK</span>
+                        </div>
+                        <span class="stack-counter">Depth: <span id="stack-size-count">0</span></span>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">PUSHES</div>
+                            <div class="stat-val" id="stat-push-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">POPS</div>
+                            <div class="stat-val" id="stat-pop-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">PEAK SIZE</div>
+                            <div class="stat-val" id="stat-peak-count">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stack-viewport" id="visual-stack-container"></div>
+                </div>
+
+                <div class="ds-inspector-card">
+                    <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
+                    <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
+                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"About"</span></div>
+                    <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">2</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+    </footer>
+
+    <script src="js/stack.js"></script>
+</body>
+</html>

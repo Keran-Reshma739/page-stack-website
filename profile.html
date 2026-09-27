@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Page Stack History Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" data-page="Home">
+                <div class="brand-icon">🥞</div>
+                <span>PageStack</span>
+                <span class="brand-badge">LIFO Engine</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-page="Home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
+                    <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="profile.html" class="nav-link active" data-page="Profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Header -->
+    <section class="page-hero">
+        <div class="hero-container">
+            <div class="hero-title-group">
+                <h1><span>👤</span> Session Trajectory & Analytics</h1>
+                <p class="hero-subtitle">Real-Time Navigation Analytics, Stack Operations Audit & Memory State</p>
+            </div>
+            <div class="control-actions">
+                <button class="btn btn-back">← Back (POP)</button>
+                <button class="btn btn-reset-stack">Reset Stack</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+        
+        <section class="content-column">
+            
+            <div class="content-card">
+                <h2 class="card-heading"><span>📈</span> Session Metrics Dashboard</h2>
+                <p class="card-intro">
+                    Summary of all data structure mutations executed during your current browsing session:
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <div class="feature-title">Total PUSHES</div>
+                        <div class="feature-desc" style="font-size: 1.6rem; font-weight: 800; color: var(--primary);" id="stat-push-count">0</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">Total POPS</div>
+                        <div class="feature-desc" style="font-size: 1.6rem; font-weight: 800; color: var(--accent-rose);" id="stat-pop-count">0</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">Peak Stack Size</div>
+                        <div class="feature-desc" style="font-size: 1.6rem; font-weight: 800; color: var(--top-accent);" id="stat-peak-count">0</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">Current Depth</div>
+                        <div class="feature-desc" style="font-size: 1.6rem; font-weight: 800; color: var(--accent-cyan);" id="stack-size-count">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session Controls & Clear Card -->
+            <div class="content-card">
+                <h2 class="card-heading"><span>⚙️</span> LocalStorage Management</h2>
+                <p class="card-intro">
+                    Manage persistent data stored in your browser's <code>localStorage</code> context:
+                </p>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn btn-reset-stack">🔄 Reset Stack History</button>
+                    <button onclick="localStorage.clear(); location.reload();" class="btn" style="background: #e2e8f0; color: #334155;">🧹 Purge All Storage Data</button>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Card -->
+            <div class="content-card">
+                <div class="quick-nav-card">
+                    <div class="quick-nav-header">Continue Navigation (PUSH)</div>
+                    <div class="quick-nav-links">
+                        <a href="index.html" class="quick-nav-link" data-page="Home">Home <span>→</span></a>
+                        <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
+                        <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Visual Stack -->
+        <aside class="sidebar-column">
+            <div class="sidebar-stack-wrapper">
+                <div class="stack-card">
+                    <div class="stack-header">
+                        <div class="stack-title">
+                            <span>🥞 HISTORY STACK</span>
+                        </div>
+                        <span class="stack-counter">Depth: <span id="stack-size-count">0</span></span>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">PUSHES</div>
+                            <div class="stat-val" id="stat-push-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">POPS</div>
+                            <div class="stat-val" id="stat-pop-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">PEAK SIZE</div>
+                            <div class="stat-val" id="stat-peak-count">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stack-viewport" id="visual-stack-container"></div>
+                </div>
+
+                <div class="ds-inspector-card">
+                    <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
+                    <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
+                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [];</div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Profile"</span></div>
+                    <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+    </footer>
+
+    <script src="js/stack.js"></script>
+</body>
+</html>

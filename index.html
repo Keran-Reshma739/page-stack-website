@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Page Stack History Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" data-page="Home">
+                <div class="brand-icon">🥞</div>
+                <span>PageStack</span>
+                <span class="brand-badge">LIFO Engine</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active" data-page="Home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-page="About">About</a></li>
+                    <li><a href="services.html" class="nav-link" data-page="Services">Services</a></li>
+                    <li><a href="products.html" class="nav-link" data-page="Products">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-page="Gallery">Gallery</a></li>
+                    <li><a href="blog.html" class="nav-link" data-page="Blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-page="Contact">Contact</a></li>
+                    <li><a href="profile.html" class="nav-link" data-page="Profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Header -->
+    <section class="page-hero">
+        <div class="hero-container">
+            <div class="hero-title-group">
+                <h1><span>🏠</span> Home Page</h1>
+                <p class="hero-subtitle">Interactive Stack Data Structure Simulator & Browser History Demonstration</p>
+            </div>
+            <div class="control-actions">
+                <button class="btn btn-back">← Back (POP)</button>
+                <button class="btn btn-reset-stack">Reset Stack</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+        
+        <!-- Left Main Content Column -->
+        <section class="content-column">
+            
+            <div class="content-card">
+                <h2 class="card-heading"><span>💡</span> Interactive Navigation Simulator</h2>
+                <p class="card-intro">
+                    This platform demonstrates how web browsers manage page history using a 
+                    <strong>Stack Data Structure (LIFO - Last In, First Out)</strong>. 
+                    Clicking links below performs a <code>push()</code> operation. Clicking <strong>Back (POP)</strong> 
+                    removes the top element and navigates to the previous page.
+                </p>
+
+                <div class="quick-nav-card">
+                    <div class="quick-nav-header">Navigate to Target Page (PUSH)</div>
+                    <div class="quick-nav-links">
+                        <a href="about.html" class="quick-nav-link" data-page="About">About <span>→</span></a>
+                        <a href="services.html" class="quick-nav-link" data-page="Services">Services <span>→</span></a>
+                        <a href="products.html" class="quick-nav-link" data-page="Products">Products <span>→</span></a>
+                        <a href="gallery.html" class="quick-nav-link" data-page="Gallery">Gallery <span>→</span></a>
+                        <a href="blog.html" class="quick-nav-link" data-page="Blog">Blog <span>→</span></a>
+                        <a href="contact.html" class="quick-nav-link" data-page="Contact">Contact <span>→</span></a>
+                        <a href="profile.html" class="quick-nav-link" data-page="Profile">Profile <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "How the Stack Works" Educational Section -->
+            <div class="content-card">
+                <h2 class="card-heading"><span>⚙️</span> How the Stack Works</h2>
+                <p class="card-intro">
+                    A Stack is a linear data structure that follows a strict <strong>Last In, First Out (LIFO)</strong> order. 
+                    Elements are inserted and removed from the exact same end, known as the <strong>TOP</strong> of the stack.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">📥</div>
+                        <div class="feature-title">New Page &rarr; PUSH</div>
+                        <div class="feature-desc">Visiting a new page pushes a node onto the top of the stack.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">📤</div>
+                        <div class="feature-title">Back Button &rarr; POP</div>
+                        <div class="feature-desc">Popping removes the current top element and exposes the previous page.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">👁️</div>
+                        <div class="feature-title">Top Element &rarr; PEEK</div>
+                        <div class="feature-desc">The element at the top of the stack always represents the active page.</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">Principle &rarr; LIFO</div>
+                        <div class="feature-desc">Last In, First Out property guarantees reverse-chronological order.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real World Applications -->
+            <div class="content-card">
+                <h2 class="card-heading"><span>🌐</span> Real-World Applications of Stacks</h2>
+                <div class="ds-table-wrapper">
+                    <table class="ds-table">
+                        <thead>
+                            <tr>
+                                <th>Use Case</th>
+                                <th>PUSH Operation</th>
+                                <th>POP Operation</th>
+                                <th>LIFO Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Browser History</strong></td>
+                                <td>Visiting new URL</td>
+                                <td>Clicking Back button</td>
+                                <td>Returns to last visited page</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Function Call Stack</strong></td>
+                                <td>Function invocation</td>
+                                <td>Function return</td>
+                                <td>Manages execution context & local vars</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Undo / Redo Engine</strong></td>
+                                <td>User edit action</td>
+                                <td>Ctrl+Z (Undo)</td>
+                                <td>Reverts most recent change first</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parentheses Matching</strong></td>
+                                <td>Opening bracket '('</td>
+                                <td>Closing bracket ')'</td>
+                                <td>Validates nested syntax structures</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Visual Stack & State Inspector -->
+        <aside class="sidebar-column">
+            <div class="sidebar-stack-wrapper">
+                
+                <!-- Visual Memory Stack Card -->
+                <div class="stack-card">
+                    <div class="stack-header">
+                        <div class="stack-title">
+                            <span>🥞 HISTORY STACK</span>
+                        </div>
+                        <span class="stack-counter">Depth: <span id="stack-size-count">0</span></span>
+                    </div>
+
+                    <!-- Operation Metrics Dashboard -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">PUSHES</div>
+                            <div class="stat-val" id="stat-push-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">POPS</div>
+                            <div class="stat-val" id="stat-pop-count">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">PEAK SIZE</div>
+                            <div class="stat-val" id="stat-peak-count">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Layered Stack Container -->
+                    <div class="stack-viewport" id="visual-stack-container">
+                        <!-- Dynamic stack items rendered here -->
+                    </div>
+                </div>
+
+                <!-- Live Data Structure Inspector -->
+                <div class="ds-inspector-card">
+                    <div class="ds-inspector-header">&lt;/&gt; Live Data Structure Inspector</div>
+                    <div class="ds-line"><span class="ds-var">PageStack</span>.items[]:</div>
+                    <div class="ds-line" id="ds-array-code" style="color: #38bdf8;">items = [ "Home" ];</div>
+                    <div class="ds-line" style="margin-top: 0.5rem;"><span class="ds-var">peek()</span> = <span class="ds-val" id="ds-peek-value">"Home"</span></div>
+                    <div class="ds-line"><span class="ds-var">size()</span> = <span class="ds-val" id="ds-size-value">1</span></div>
+                </div>
+
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Data Structures & Algorithms College Project &bull; Browser History Stack Demonstration (LIFO)</p>
+    </footer>
+
+    <script src="js/stack.js"></script>
+</body>
+</html>
